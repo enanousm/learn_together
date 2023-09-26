@@ -1,12 +1,21 @@
 <!DOCTYPE html>
+<html align="center">
     <head>
+
         <link rel="style" href="style.css">
-        <h1 style="color:brown">Hola</h1>
+
+        <h1 style="color:brown; font-size: larger;">
+            LEARN TOGETHER
+        </h1>
+
         <p style="color:green">
             Aguante el Fascismo
         </p>
+
     </head>
-    <body bgcolor="black">
+
+
+    <body bgcolor="darkgray">
         <p style="color:red">
             ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠋⠉⡉⣉⡛⣛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿<br>
             ⣿⣿⣿⣿⣿⣿⣿⡿⠋⠁⠄⠄⠄⠄⠄⢀⣸⣿⣿⡿⠿⡯⢙⠿⣿⣿⣿⣿⣿⣿<br>
@@ -22,6 +31,31 @@
             ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢿⣿⠟⡋⠄⠄⠄⢣⠄⠄⠄⠄⠄⠄⠄⠈⠹⣿⣀<br>
             ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⣷⣿⣿⣷⠄⠄⢺⣇⠄⠄⠄⠄⠄⠄⠄⠄⠸⣿<br>
             ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠹⣿⣿⡇⠄⠄⠸⣿⡄⠄⠈⠁⠄⠄⠄⠄⠄⣿<br>
-            ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⣿⡇⠄⠄⠄⢹⣧⠄⠄⠄⠄⠄⠄⠄⠄⠘
+            ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⣿⡇⠄⠄⠄⢹⣧⠄⠄⠄⠄⠄⠄⠄⠄⠘<br>
         </p>
+        <br>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" maxlength="100" name="nombre" id="nombre">
+            <br>
+            <br>
+            <label for="correo">Correo:&nbsp;&nbsp;</label>
+            <input type="mail" placeholder="nombre@usm.cl" maxlength="100" name="correo" id="correo">
+            <br>
+            <br>
+            <label for="rol">ROL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" placeholder="Ej: 123456789-1" maxlength="11" name="rol" id="rol">
+            <br>
+            <br>
+            Sexo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select>
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <input type="submit" value="Registrarse">
+         </form>
     </body>
+</html>
