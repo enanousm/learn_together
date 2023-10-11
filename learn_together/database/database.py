@@ -1,12 +1,23 @@
 import sqlite3
 
-conexion = sqlite3.connect('learn_together_bd')
-cursor_bd = conexion.cursor()
+connection = sqlite3.connect('learn_together/database/lt_bd.db')
+cursor = connection.cursor()
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS userdata(
+               nombre text,
+               apellidop text,
+               sexo text,
+               correo text,
+               contraseña text,
+               rol text,
+               horarios text
+    )
+''')
 
-def tabla_existe(nombre_tabla):
-    cursor_bd.execute('''SELECT COUNT(name) FROM  SQLITE_MASTER WHERE TYPE = 'table' AND name = '{}' '''.format(nombre_tabla))
-    if cursor_bd.fetchone()[0] == 1:
-        return True
-    else:
-        
-        return 0
+instruction = 'INSERT INTO userdata VALUES({},{},{},{},{},{},{})'.format('Juan','Perez','Hombre','jperez','hola1234','123456789-0','lu7,ma8,vi3')
+cursor.execute(instruction)
+
+
+connection.commit()
+connection.close()
+
