@@ -67,7 +67,7 @@ def search_horario(correo):
     c.commit()
     c.close()
     return data[0][0]
-    #retorna un strin
+    #retorna un string
 
 print(search_user('jureta'))
 print(search_horario('jureta'))
