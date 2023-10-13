@@ -68,6 +68,3 @@ def search_horario(correo):
     c.close()
     return data[0][0]
     #retorna un string
-
-print(search_user('jureta'))
-print(search_horario('jureta'))

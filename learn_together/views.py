@@ -1,10 +1,5 @@
 from django.http import HttpResponse
-from django.template import Template, Context
+from django.shortcuts import render
 
 def hola(request):
-    plantillaExt = open("templates/registro.html")
-    template = Template(plantillaExt.read())
-    plantillaExt.close()
-    contexto = Context()
-    documento = template.render(contexto)
-    return HttpResponse(documento)
+    return render(request, 'registro.html')
