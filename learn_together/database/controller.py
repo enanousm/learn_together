@@ -68,3 +68,5 @@ def search_horario(correo):
     c.close()
     return data[0][0]
     #retorna un string
+
+update_horario('jureta','ma6,mi3')
