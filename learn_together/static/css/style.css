@@ -1,0 +1,13 @@
+body {
+    background: url("learn_together/static/images/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h1 {
+    color:brown;
+}
+p {
+    color:red;
+
+}
+    

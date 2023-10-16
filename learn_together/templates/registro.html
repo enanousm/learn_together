@@ -1,19 +1,12 @@
 <!DOCTYPE html>
-<html align="center">
-    <style>
-        body {
-        background: url("images/fondo.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-    </style>
-    
+<html align="center" {% load static %} >
+
     <head>
-        <link rel="style" href="style.css">
-        <h1 style="color:brown;">
+        <link rel="stylesheet" type='text/css' href="{% static "css/style.css" %}">
+        <h1>
             LEARN TOGETHER
         </h1>
-        <p style="color:green">
+        <p>
             Unete a nosotros!!
         </p>
     </head>
@@ -21,7 +14,7 @@
     <body>
         <p>
            <img 
-           src="images/cabros_felices.png"
+           src= "{% static "images/estudiantes.png" %}"
            width="350"
            height="300"
            />
