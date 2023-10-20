@@ -70,4 +70,3 @@ def search_horario(correo):
     #retorna un string
 
 
-def verify(correo):
