@@ -69,4 +69,5 @@ def search_horario(correo):
     return data[0][0]
     #retorna un string
 
-update_horario('jureta','ma6,mi3')
+
+def verify(correo):
