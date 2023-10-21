@@ -7,36 +7,87 @@
     } 
 }
 @keyframes mover_fade {
-    from {transform: translateY(200px); opacity: 0; filter:blur(5px)}
+    from {transform: translateY(-200px); opacity: 0; filter:blur(5px)}
     to {opacity: 1;filter:blur(0px)}
 }
 
 #titulo{
-    font-size: 70px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(30, 255, 0);
-    text-shadow: 3px 2px 3px white;
+    color: #070c19;
+    font-size: 90px;
+    font-family: 'Chakra Petch';
+    text-shadow: 5px 4px 3px #343c42;
+    text-align: right;
     margin-bottom: 15px;
+    margin-top: 0px;
+    margin-right: 10%;
     animation-name: fade;
     animation-duration: 4s;
-
 }
 
-img{
+.logo_usm {
+    float: left;
+    display: inline;
+    margin-top: 16px;
+    margin-left: 10%;
+    animation-name: fade;
+    animation-duration: 4s;
+}
+
+.img_estudiantes{
+    float: left;
     border-radius: 50%;
     animation-name: mover_fade;
     animation-duration: 2s;
+    margin-left: 10%;
 }
 
-div {
-    animation-name: fade;
-    animation-duration: 3s;
+#formulario{
+    float: right;
+    color: white;
+    font-family: 'Chakra Petch';
+    animation-name: mover_fade;
+    animation-duration: 2s;
     border-style: solid;
     border-color: black;
     border-width: 2px;
     border-radius: 50px;
-    background-color: darkslategray;
+    background-color: #002534;
     overflow: hidden;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0px 25px 0px 25px;
+    margin-right: 10%;
+    width: 300px;
+    box-shadow: 2px 2px 3px #343c42;
+}
+.right {
+    float: right;
+}
+.center {
+    text-align: center;
+    font-size: 18px;
+}
+.registrar {
+    width: 130px;
+    height: 30px;
+    margin: 0 auto;
+    
+}
+.registrar:hover {
+    cursor: pointer;
+}
+.boton {
+    transition: color 0.2s ease;
+    transition: background-color 0.2s ease;
+}
+.boton:hover {
+    color:white;
+    background-color: rgb(3, 102, 72);
+}
+.pregunta {
+    font-size: 12px;
+    transition: color 0.4s ease;
+    width: 140px;
+}
+.pregunta:hover {
+    cursor: pointer;
+    color: aquamarine;
 }

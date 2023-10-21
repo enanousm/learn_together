@@ -3,8 +3,18 @@
 <head>
     <title>¡Registrate!</title>
     <link rel="stylesheet" type='text/css' href="{% static "css/style_registro.css" %}">
-    <h1 id="titulo">
-        Learn Together
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,600&display=swap" rel="stylesheet">
+    <img 
+        class="logo_usm" 
+        src="{% static "images/logo_usm.png" %}" 
+        width="90px" 
+        height="90px"
+        title="Universidad Tecnica Federico Santa Maria"
+        >
+    <h1 id="titulo">        
+        LEARN TOGETHER
     </h1>
 </head>
 
@@ -17,60 +27,56 @@ background-attachment: fixed"
     <p>
         <img 
         src= "{% static "images/estudiantes.png" %}"
-        width="350"
-        height="300"
+        width="510"
+        height="450"
         title="Estudiantes"
+        class="img_estudiantes"
         />
-    </p>
-    <div>
-        <p>
-            <br>
-            <form action="registrado/" type="GET">
+        <div id="formulario">
+            <p class="center">Registrate ¡Es gratis!</p>
+            <form action="registrado/" method="post">
                 
                 <label for="nombre">Nombre:</label>
-                <input align= left type="text" placeholder="Primer nombre" maxlength="25" name="nombre" id="nombre">
-                <br>
-                <br>
-                
-                <label for="apellido">Apellido:</label>
-                <input type="text" placeholder="Apellido paterno " maxlength="25" name="apellido" id="apellido">
-                <br>
-                <br>
-                
-                <label for="contraseña">Contraseña:</label>
-                <input type="contraseña" maxlength="15" name="contraseña" id="contraseña">
-                <br>
-                <br>
-                
-                <label for="correo">Correo:&nbsp;&nbsp;</label>
-                <input type="email" placeholder="nombre@usm.cl" maxlength="100" name="correo" id="correo">
+                <input required type="text" placeholder="Primer nombre" maxlength="25" name="nombre" id="nombre" class="right boton">
                 <br>
                 <br>
                     
-                <label for="rol">ROL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input type="text" placeholder="Ej: 123456789-1" maxlength="11" name="rol" id="rol">
+                <label for="apellido">Apellido:</label>
+                <input required type="text" placeholder="Apellido paterno " maxlength="25" name="apellido" id="apellido" class="right boton">
+                <br>
+                <br>
+                    
+                <label for="contraseña">Contraseña:</label>
+                <input required type="contraseña" placeholder="Min: 8 caracteres" minlength="8" maxlength="15" name="contraseña" id="contraseña" class="right boton">
+                <br>
+                <br>
+                
+                <label for="correo">Correo:</label>
+                <input required type="email" placeholder="nombre@usm.cl" maxlength="100" name="correo" id="correo" class="right boton">
+                <br>
+                <br>
+                    
+                <label for="rol">ROL:</label>
+                <input required type="tel" placeholder="Ej: 123456789-1" maxlength="11" name="rol" id="rol" class="right boton">
                 <br>
                 <br>
                 Sexo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                <select id="sexo">
+                <select required id="sexo" class="right boton">
                     <option value="Hombre">Hombre</option> 
                     <option value="Mujer">Mujer</option>
                     <option value="Otro">Otro</option>
                 </select>
                 <br>
                 <br>
-                Horarios disponibles:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="horarios">Ingrese sus horarios libres:</label>
+                <textarea required type="text" id="horarios" name="horarios" rows="4" cols="35" placeholder="Formato:Dia/Bloques        Ej:Lunes,56 Martes,1278"></textarea>
                 <br>
                 <br>
-                <select id="horarios">
-                    <option value="lu1">Lunes 1-2</option> 
-                </select>
-                <br>
-                <br>
-                <br>
-                <input type="submit" value="Registrarse">
+                <input type="submit" value="Registrarse" class="boton registrar">
+                <p class="pregunta">¿Ya tienes una cuenta?</p>
             </form>
-        </p>
-    </div>
+        </div>
+    </p>
+    
 </body>
 </html>
