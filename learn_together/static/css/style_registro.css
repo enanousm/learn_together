@@ -1,4 +1,4 @@
-@keyframes multicolor {
+@keyframes fade {
     from {
         opacity: 0
     }
@@ -6,32 +6,37 @@
         opacity: 1;
     } 
 }
-@keyframes mover_izq {
-    from {transform: translateX(200px); opacity: 0; filter:blur(5px)}
+@keyframes mover_fade {
+    from {transform: translateY(200px); opacity: 0; filter:blur(5px)}
     to {opacity: 1;filter:blur(0px)}
 }
 
-.imagen_principal{
-    
-    border-radius: 50%;
-    animation-name: mover_izq;
-    animation-duration: 2s;
-    border-width: 5px;
-    border-color: black;
-}
 #titulo{
-    color: black;
-    transform: translateY(20px);
-    animation-name: multicolor;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    font-size: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(30, 255, 0);
+    text-shadow: 3px 2px 3px white;
+    margin-bottom: 15px;
+    animation-name: fade;
+    animation-duration: 4s;
+
+}
+
+img{
+    border-radius: 50%;
+    animation-name: mover_fade;
+    animation-duration: 2s;
 }
 
 div {
-    border-width: 5px;
+    animation-name: fade;
+    animation-duration: 3s;
+    border-style: solid;
     border-color: black;
-    border-radius: 5px;
-    border-style: dotted;
-
+    border-width: 2px;
+    border-radius: 50px;
+    background-color: darkslategray;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
 }
