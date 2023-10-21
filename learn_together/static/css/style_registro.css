@@ -25,6 +25,9 @@ h1 {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-p {
+.formulario{
+    border-color: black;
+    border-width: 5px;
+    border-radius: 5px;
 
 }
