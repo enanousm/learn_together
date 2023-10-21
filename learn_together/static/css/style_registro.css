@@ -11,13 +11,15 @@
     to {opacity: 1;filter:blur(0px)}
 }
 
-img {
+.imagen_principal{
     
     border-radius: 50%;
     animation-name: mover_izq;
     animation-duration: 2s;
+    border-width: 5px;
+    border-color: black;
 }
-h1 {
+#titulo{
     color: black;
     transform: translateY(20px);
     animation-name: multicolor;
@@ -25,9 +27,11 @@ h1 {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-.formulario{
-    border-color: black;
+
+div {
     border-width: 5px;
+    border-color: black;
     border-radius: 5px;
+    border-style: dotted;
 
 }

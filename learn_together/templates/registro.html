@@ -1,71 +1,76 @@
 <!DOCTYPE html>
 <html {% load static %} align="center">
-    <head>
-        <link rel="stylesheet" type='text/css' href="{% static "css/style_registro.css" %}">
-        <h1 align="center">
-            Learn Together
-        </h1>
-    </head>
+<head>
+    <title>¡Registrate!</title>
+    <link rel="stylesheet" type='text/css' href="{% static "css/style_registro.css" %}">
+    <h1 id="titulo">
+        Learn Together
+    </h1>
+</head>
 
-    <body
-    style="
-    background-image: url('{% static "images/form_background.jpg" %}'); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed"
-    >
-        <p class="formulario">
-            <img 
-            src= "{% static "images/estudiantes.png" %}"
-            width="350"
-            height="300"
-            />
+<body
+style="
+background-image: url('{% static "images/form_background.jpg" %}'); 
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed"
+    <p class="imagen_principal">
+        <img 
+        src= "{% static "images/estudiantes.png" %}"
+        width="350"
+        height="300"
+        />
+    </p>
+    <p class="formulario">
+        <br>
+        <form action="registrado/" type="GET">
+            
+            <label for="nombre">Nombre:</label>
+            <input type="text" placeholder="Primer nombre" maxlength="25" name="nombre" id="nombre">
             <br>
-            <form action="registrado/" type="GET">
+            <br>
+            
+            <label for="apellido">Apellido:</label>
+            <input type="text" placeholder="Apellido paterno " maxlength="25" name="apellido" id="apellido">
+            <br>
+            <br>
+            
+            <label for="password">Password:</label>
+            <input type="password" maxlength="15" name="contraseña" id="contraseña">
+            <br>
+            <br>
+            
+            <label for="correo">Correo:&nbsp;&nbsp;</label>
+            <input type="email" placeholder="nombre@usm.cl" maxlength="100" name="correo" id="correo">
+            <br>
+            <br>
                 
-                <label for="nombre">Nombre:</label>
-                <input type="text" placeholder="Primer nombre" maxlength="25" name="nombre" id="nombre">
-                <br>
-                <br>
-                
-                <label for="apellido">Apellido:</label>
-                <input type="text" placeholder="Apellido paterno " maxlength="25" name="apellido" id="apellido">
-                <br>
-                <br>
-                
-                <label for="password">Password:</label>
-                <input type="password" maxlength="15" name="contraseña" id="contraseña">
-                <br>
-                <br>
-                
-                <label for="correo">Correo:&nbsp;&nbsp;</label>
-                <input type="email" placeholder="nombre@usm.cl" maxlength="100" name="correo" id="correo">
-                <br>
-                <br>
-                
-                <label for="rol">ROL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input type="text" placeholder="Ej: 123456789-1" maxlength="11" name="rol" id="rol">
-                <br>
-                <br>
-                Sexo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                <select id="sexo">
-                    <option value="Hombre">Hombre</option> 
-                    <option value="Mujer">Mujer</option>
-                    <option value="Otro">Otro</option>
-                </select>
-                <br>
-                <br>
-                Horarios disponibles:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <br>
-                <br>
-                <select id="horarios">
-                    <option value="lu1">Lunes 1-2</option> 
-                </select>
-                <br>
-                <br>
-                <br>
-                <input type="submit" value="Registrarse">
-            </form>
-        </p>
-    </body>
+            <label for="rol">ROL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" placeholder="Ej: 123456789-1" maxlength="11" name="rol" id="rol">
+            <br>
+            <br>
+            Sexo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <select id="sexo">
+                <option value="Hombre">Hombre</option> 
+                <option value="Mujer">Mujer</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <br>
+            <br>
+            Horarios disponibles:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <select id="horarios">
+                <option value="lu1">Lunes 1-2</option> 
+            </select>
+            <br>
+            <br>
+            <br>
+            <input type="submit" value="Registrarse">
+        </form>
+    </p>
+    <div>
+    <p class="hola"> Hola hola hola</p>
+    </div>
+</body>
 </html>
