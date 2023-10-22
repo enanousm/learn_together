@@ -34,7 +34,7 @@ background-attachment: fixed"
         />
         <div id="formulario">
             <p class="center">Registrate ¡Es gratis!</p>
-            <form action="registrado/" method="post">
+            <form action="registrado/" method="post">{% csrf_token %}
                 
                 <label for="nombre">Nombre:</label>
                 <input required type="text" placeholder="Primer nombre" maxlength="25" name="nombre" id="nombre" class="right boton">
@@ -61,7 +61,7 @@ background-attachment: fixed"
                 <br>
                 <br>
                 <label for="sexo">Sexo:</label> 
-                <select required id="sexo" class="right boton">
+                <select required name="sexo" id="sexo" class="right boton">
                     <option value="Hombre">Hombre</option> 
                     <option value="Mujer">Mujer</option>
                     <option value="Otro">Otro</option>
