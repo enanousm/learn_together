@@ -28,35 +28,31 @@ background-attachment: fixed
     <p>
         <img 
         src= "{% static "images/estudiantes.png" %}"
-        width="510"
-        height="450"
+        width="460"
+        height="390"
         title="Estudiantes"
         class="img_estudiantes"
         />
-        <div id="formulario">
-            <p class="center">Registrate ¡Es gratis!</p>
-            <form action="registrado/" method="post">{% csrf_token %}
-                
+        
+        <form action="registrado/" method="post">{% csrf_token %}
+            <div id="form_up">
+                <p class="center">Registrate ¡Es gratis!</p>
                 <label for="nombre">Nombre:</label>
                 <input required type="text" placeholder="Primer nombre" maxlength="25" name="nombre" id="nombre" class="right boton">
                 <br>
                 <br>
-                    
                 <label for="apellido">Apellido:</label>
                 <input required type="text" placeholder="Apellido paterno " maxlength="25" name="apellido" id="apellido" class="right boton">
                 <br>
                 <br>
-                    
                 <label for="contraseña">Contraseña:</label>
                 <input required type="password" placeholder="Min: 8 caracteres" minlength="8" maxlength="15" name="contraseña" id="contraseña" class="right boton">
                 <br>
                 <br>
-                
                 <label for="correo">Correo:</label>
                 <input required type="email" placeholder="nombre@usm.cl" maxlength="100" name="correo" id="correo" class="right boton">
                 <br>
                 <br>
-                    
                 <label for="rol">ROL:</label>
                 <input required type="tel" placeholder="Ej: 123456789-1" maxlength="11" name="rol" id="rol" class="right boton">
                 <br>
@@ -69,14 +65,147 @@ background-attachment: fixed
                 </select>
                 <br>
                 <br>
-                <label for="horarios">Ingrese sus horarios libres:</label>
-                <textarea required type="text" id="horarios" name="horarios" rows="4" cols="35" placeholder="Formato:Dia/Bloques        Ej:Lunes,56 Martes,1278" class="boton"></textarea>
-                <br>
-                <br>
-                <input type="submit" value="Registrarse" class="boton registrar">
-                <p class="pregunta">¿Ya tienes una cuenta?</p>
-            </form>
-        </div>
+            </div>
+            <div id="form_down">
+                <p id="minititulo">Ingresa tus bloques libres:</p>
+                <p id="Lunes">LUNES<br>
+                    <label for="lu1">Bloque 1-2</label>
+                    <input type="checkbox" id="lu1" name="lu" value="lu1" class="boton"><br>
+
+                    <label for="lu2">Bloque 3-4</label>
+                    <input type="checkbox" id="lu2" name="lu" value="lu2" class="boton"><br>
+
+                    <label for="lu3">Bloque 5-6</label>
+                    <input type="checkbox" id="lu3" name="lu" value="lu3" class="boton"><br>
+
+                    <label for="lu4">Bloque 7-8</label>
+                    <input type="checkbox" id="lu4" name="lu" value="lu4" class="boton"><br>
+
+                    <label for="lu5">Bloque 9-10</label>
+                    <input type="checkbox" id="lu5" name="lu" value="lu5" class="boton"><br>
+
+                    <label for="lu6">Bloque 11-12</label>
+                    <input type="checkbox" id="lu6" name="lu" value="lu6" class="boton"><br>
+
+                    <label for="lu7">Bloque 13-14</label>
+                    <input type="checkbox" id="lu7" name="lu" value="lu7" class="boton"><br>
+
+                    <label for="lu8">Bloque 15-16</label>
+                    <input type="checkbox" id="lu8" name="lu" value="lu8" class="boton"><br>
+                </p>
+                <p id="Martes">MARTES<br>
+                    <label for="ma1">Bloque 1-2</label>
+                    <input type="checkbox" id="ma1" name="ma1" value="ma1" class="boton"><br>
+
+                    <label for="ma2">Bloque 3-4</label>
+                    <input type="checkbox" id="ma2" name="ma2" value="ma2" class="boton"><br>
+
+                    <label for="ma3">Bloque 5-6</label>
+                    <input type="checkbox" id="ma3" name="ma3" value="ma3" class="boton"><br>
+
+                    <label for="ma4">Bloque 7-8</label>
+                    <input type="checkbox" id="ma4" name="ma4" value="ma4" class="boton"><br>
+
+                    <label for="ma5">Bloque 9-10</label>
+                    <input type="checkbox" id="ma5" name="ma5" value="ma5" class="boton"><br>
+
+                    <label for="ma6">Bloque 11-12</label>
+                    <input type="checkbox" id="ma6" name="ma6" value="ma6" class="boton"><br>
+
+                    <label for="ma7">Bloque 13-14</label>
+                    <input type="checkbox" id="ma7" name="ma7" value="ma7" class="boton"><br>
+
+                    <label for="ma8">Bloque 15-16</label>
+                    <input type="checkbox" id="ma8" name="ma8" value="ma8" class="boton"><br>
+                </p>
+                <p id="Miercoles">MIERCOLES<br>
+                    <label for="mi1">Bloque 1-2</label>
+                    <input type="checkbox" id="mi1" name="mi1" value="mi1" class="boton"><br>
+
+                    <label for="mi2">Bloque 3-4</label>
+                    <input type="checkbox" id="mi2" name="mi2" value="mi2" class="boton"><br>
+
+                    <label for="mi3">Bloque 5-6</label>
+                    <input type="checkbox" id="mi3" name="mi3" value="mi3" class="boton"><br>
+
+                    <label for="mi4">Bloque 7-8</label>
+                    <input type="checkbox" id="mi4" name="mi4" value="mi4" class="boton"><br>
+
+                    <label for="mi5">Bloque 9-10</label>
+                    <input type="checkbox" id="mi5" name="mi5" value="mi5" class="boton"><br>
+
+                    <label for="mi6">Bloque 11-12</label>
+                    <input type="checkbox" id="mi6" name="mi6" value="mi6" class="boton"><br>
+
+                    <label for="mi7">Bloque 13-14</label>
+                    <input type="checkbox" id="mi7" name="mi7" value="mi7" class="boton"><br>
+
+                    <label for="mi8">Bloque 15-16</label>
+                    <input type="checkbox" id="mi8" name="mi8" value="mi8" class="boton"><br>
+                </p>
+                <p id="Jueves">JUEVES<br>
+                    <label for="ju1">Bloque 1-2</label>
+                    <input type="checkbox" id="ju1" name="ju1" value="ju1" class="boton"><br>
+
+                    <label for="ju2">Bloque 3-4</label>
+                    <input type="checkbox" id="ju2" name="ju2" value="ju2" class="boton"><br>
+
+                    <label for="ju3">Bloque 5-6</label>
+                    <input type="checkbox" id="ju3" name="ju3" value="ju3" class="boton"><br>
+
+                    <label for="ju4">Bloque 7-8</label>
+                    <input type="checkbox" id="ju4" name="ju4" value="ju4" class="boton"><br>
+
+                    <label for="ju5">Bloque 9-10</label>
+                    <input type="checkbox" id="ju5" name="ju5" value="ju5" class="boton"><br>
+
+                    <label for="ju6">Bloque 11-12</label>
+                    <input type="checkbox" id="ju6" name="ju6" value="ju6" class="boton"><br>
+
+                    <label for="ju7">Bloque 13-14</label>
+                    <input type="checkbox" id="ju7" name="ju7" value="ju7" class="boton"><br>
+
+                    <label for="ju8">Bloque 15-16</label>
+                    <input type="checkbox" id="ju8" name="ju8" value="ju8" class="boton"><br>
+                </p>
+                <p id="Viernes">VIERNES<br>
+                    <label for="vi1">Bloque 1-2</label>
+                    <input type="checkbox" id="vi1" name="vi1" value="vi1" class="boton"><br>
+
+                    <label for="vi2">Bloque 3-4</label>
+                    <input type="checkbox" id="vi2" name="vi2" value="vi2" class="boton"><br>
+
+                    <label for="vi3">Bloque 5-6</label>
+                    <input type="checkbox" id="vi3" name="vi3" value="vi3" class="boton"><br>
+
+                    <label for="vi4">Bloque 7-8</label>
+                    <input type="checkbox" id="vi4" name="vi4" value="vi4" class="boton"><br>
+
+                    <label for="vi5">Bloque 9-10</label>
+                    <input type="checkbox" id="vi5" name="vi5" value="vi5" class="boton"><br>
+
+                    <label for="vi6">Bloque 11-12</label>
+                    <input type="checkbox" id="vi6" name="vi6" value="vi6" class="boton"><br>
+
+                    <label for="vi7">Bloque 13-14</label>
+                    <input type="checkbox" id="vi7" name="vi7" value="vi7" class="boton"><br>
+
+                    <label for="vi8">Bloque 15-16</label>
+                    <input type="checkbox" id="vi8" name="vi8" value="vi8" class="boton"><br>
+                </p>
+                <p id="final">
+                    <img
+                    src= "{% static "images/calendario.png" %}"
+                    width="140"
+                    height="140"
+                    title="calendario"
+                    class="calendario"><br>
+                    <input type="submit" value="Registrate" class="boton_registrar">
+                    <p class="pregunta">¿Ya tienes una cuenta?</p>
+                </p>
+            </div>
+        </form>
+        
     </p>
     
 </body>

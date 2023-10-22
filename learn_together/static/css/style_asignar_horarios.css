@@ -101,6 +101,7 @@ body {
 .boton_registrar:hover {
     color:white;
     background-color: rgb(3, 102, 72);
+    cursor:pointer;
 }
 .calendario {
     display: block;

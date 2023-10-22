@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html {% load static %}>
+<head>
+    <title>Inicia sesion</title>
+    <link rel="stylesheet" type='text/css' href="{% static "css/style_login.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,600&display=swap" rel="stylesheet">
+    <img 
+        class="logo_usm" 
+        src="{% static "images/logo_usm.png" %}" 
+        width="90px" 
+        height="90px"
+        title="Universidad Tecnica Federico Santa Maria"
+        >
+    <h1 id="titulo">        
+        LEARN TOGETHER
+    </h1>
+</head>
+
+<body
+style="
+background-image: url('{% static "images/form_background.jpg" %}'); 
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed
+"
+    <p>
+        <div id="formulario">
+            <p class="center">Inicia sesion:</p>
+            <form action="homepage/" method="post">{% csrf_token %}
+                <label for="correo">Correo:</label>
+                <input required type="email" placeholder="nombre@usm.cl" maxlength="100" name="correo" id="correo" class="right boton">
+                <br>
+                <br>
+                <label for="contraseña">Contraseña:</label>
+                <input required type="password" placeholder="Min: 8 caracteres" minlength="8" maxlength="15" name="contraseña" id="contraseña" class="right boton">
+                <br>
+                <br>
+                <br>
+                <input type="submit" value="Enviar" class="boton registrar">
+                <p class="pregunta">¡Registrate!</p>
+            </form>
+        </div>
+        <br>
+        <img
+        src= "{% static "images/libros.png" %}"
+        width="250"
+        height="200"
+        title="Libros"
+        class="libros"
+        >
+    </p>
+    
+</body>
+</html>

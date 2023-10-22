@@ -29,7 +29,96 @@ body {
     animation-name: fade;
     animation-duration: 4s;
 }
-
+#minititulo {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    font-size: 35px;
+    font-family: 'Chakra Petch';
+    text-shadow: 5px 4px 3px #343c42;
+    margin: 10px 0 0 0;
+    animation-name: fade;
+    animation-duration: 4s;
+}
+#form_down {
+    display: block;
+    color: white;
+    font-family: 'Chakra Petch';
+    animation-name: mover_fade2;
+    animation-duration: 2s;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 20px;
+    background-color: #002534;
+    overflow: hidden;
+    padding: 0px 25px 0px 25px;
+    box-shadow: 2px 2px 3px #343c42;
+    width: 90%;
+    height: 310px;
+    opacity: 0.9;
+}
+#Lunes {
+    width: 10%;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: rgba(0, 247, 255, 0.2);
+    border-radius: 20px;
+}
+#Martes {
+    width: 10%;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: rgba(0, 255, 0, 0.2);
+    border-radius: 20px;
+}
+#Miercoles {
+    width: 10%;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: rgba(255, 238, 0, 0.2);
+    border-radius: 20px;
+}
+#Jueves {
+    width: 10%;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius: 20px;
+}
+#Viernes {
+    width: 10%;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: rgba(255, 0, 234, 0.2);
+    border-radius: 20px;
+}
+.boton{
+    float: right;
+}
+#final {
+    float: right;
+    width: 20%;
+}
+.boton_registrar {
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 40px;
+    font-family: 'Chakra Petch';
+    font-size: 25px;
+    background-color: rgba(11, 84, 87, 0.2);
+    color: white;
+}
+.boton_registrar:hover {
+    color:white;
+    background-color: rgb(3, 102, 72);
+    cursor:pointer;
+}
+.calendario {
+    display: block;
+    margin: auto;
+}
 .logo_usm {
     float: left;
     display: inline;
@@ -44,13 +133,18 @@ body {
     border-radius: 50%;
     animation-name: mover_fade;
     animation-duration: 2s;
-    margin-left: 10%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 3%;
 }
 
-#formulario{
+#form_up{
+    display: block;
+    margin: auto;
     float: right;
     color: white;
     font-family: 'Chakra Petch';
+    font-size: 18px;
     animation-name: mover_fade2;
     animation-duration: 2s;
     border-style: solid;
@@ -62,6 +156,7 @@ body {
     padding: 0px 25px 0px 25px;
     margin-right: 10%;
     width: 300px;
+    height: 380px;
     box-shadow: 2px 2px 3px #343c42;
     opacity: 0.9;
 }
@@ -70,7 +165,7 @@ body {
 }
 .center {
     text-align: center;
-    font-size: 18px;
+    font-size: 25px;
 }
 .registrar {
     display: block;
@@ -98,6 +193,7 @@ body {
     font-size: 12px;
     transition: color 0.4s ease;
     width: 140px;
+    text-align: center;
 }
 .pregunta:hover {
     cursor: pointer;
