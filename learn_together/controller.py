@@ -68,5 +68,3 @@ def search_horario(correo):
     c.close()
     return data[0][0]
     #retorna un string
-
-

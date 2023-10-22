@@ -91,15 +91,3 @@ body {
     color:white;
     background-color: rgb(3, 102, 72);
 }
-.pregunta {
-    display: block;
-    margin: 10px auto;
-    font-size: 12px;
-    transition: color 0.4s ease;
-    width: 140px;
-    text-align: center;
-}
-.pregunta:hover {
-    cursor: pointer;
-    color: aquamarine;
-}
