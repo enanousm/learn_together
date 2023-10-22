@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,600&display=swap" rel="stylesheet">
+    <h1 id="titulo">Ingresa tus bloques libres:</h1>
 </head>
 
 <body
@@ -15,7 +16,8 @@ background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed">
 
-        <form action="registrado/" method="post" id="asignar_horarios" {% csrf_token %}
+    <div id="asignar_horarios">
+        <form action="registrado/" method="post" id="formulario" {% csrf_token %}
             <p id="Lunes">LUNES<br>
                 <label for="lu1">Bloque 1-2</label>
                 <input type="checkbox" id="lu1" name="lu1" value="lu1" class="boton"><br>
@@ -141,6 +143,16 @@ background-attachment: fixed">
                 <label for="lu8">Bloque 15-16</label>
                 <input type="checkbox" id="lu8" name="lu8" value="lu8" class="boton"><br>
             </p>
+            <p id="final">
+                <img
+                src= "{% static "images/calendario.png" %}"
+                width="130"
+                height="130"
+                title="calendario"
+                class="calendario"><br>
+                <input type="submit" value="Finalizar" class="boton_registrar">
+            </p>
         </form>
+    </div>
 </body>
 </html>

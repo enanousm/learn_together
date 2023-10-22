@@ -17,7 +17,17 @@
 body {
     background-color: #070c19;
 }
-
+#titulo {
+    color: #ffffff;
+    font-size: 40px;
+    font-family: 'Chakra Petch';
+    text-shadow: 5px 4px 3px #343c42;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    margin-right: 10%;
+    animation-name: fade;
+    animation-duration: 4s;
+}
 #asignar_horarios {
     color: white;
     font-family: 'Chakra Petch';
@@ -35,31 +45,64 @@ body {
     height: 250px;
     opacity: 0.9;
 }
+
 #Lunes {
     width: 10%;
     display: inline-block;
-    padding: 0 30px;
+    padding: 15px 30px;
+    background-color: rgba(0, 247, 255, 0.2);
+    border-radius: 20px;
 }
 #Martes {
     width: 10%;
     display: inline-block;
-    padding: 0 30px;
+    padding: 15px 30px;
+    background-color: rgba(0, 255, 0, 0.2);
+    border-radius: 20px;
 }
 #Miercoles {
     width: 10%;
     display: inline-block;
-    padding: 0 30px;
+    padding: 15px 30px;
+    background-color: rgba(255, 238, 0, 0.2);
+    border-radius: 20px;
 }
 #Jueves {
     width: 10%;
     display: inline-block;
-    padding: 0 30px;
+    padding: 15px 30px;
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius: 20px;
 }
 #Viernes {
     width: 10%;
     display: inline-block;
-    padding: 0 30px;
+    padding: 15px 30px;
+    background-color: rgba(255, 0, 234, 0.2);
+    border-radius: 20px;
 }
 .boton{
     float: right;
+}
+#final {
+    float: right;
+    width: 20%;
+}
+.boton_registrar {
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 40px;
+    font-family: 'Chakra Petch';
+    font-size: 25px;
+    background-color: rgba(11, 84, 87, 0.2);
+    color: white;
+}
+.boton_registrar:hover {
+    color:white;
+    background-color: rgb(3, 102, 72);
+}
+.calendario {
+    display: block;
+    margin: auto;
 }
