@@ -40,6 +40,47 @@ body {
     animation-name: fade;
     animation-duration: 4s;
 }
+.logo_usm {
+    float: left;
+    display: inline;
+    margin-top: 16px;
+    margin-left: 10%;
+    animation-name: fade;
+    animation-duration: 4s;
+}
+
+.img_estudiantes{
+    float: left;
+    border-radius: 50%;
+    animation-name: mover_fade;
+    animation-duration: 2s;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 3%;
+}
+
+#form_up{
+    display: block;
+    margin: auto;
+    float: right;
+    color: white;
+    font-family: 'Chakra Petch';
+    font-size: 18px;
+    animation-name: mover_fade2;
+    animation-duration: 2s;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 50px;
+    background-color: #002534;
+    overflow: hidden;
+    padding: 0px 25px 0px 25px;
+    margin-right: 10%;
+    width: 300px;
+    height: 380px;
+    box-shadow: 2px 2px 3px #343c42;
+    opacity: 0.9;
+}
 #form_down {
     display: block;
     color: white;
@@ -93,12 +134,24 @@ body {
     background-color: rgba(255, 0, 234, 0.2);
     border-radius: 20px;
 }
-.boton{
-    float: right;
+.calendario {
+    display: block;
+    margin: auto;
 }
+
 #final {
     float: right;
     width: 20%;
+}
+.boton {
+    float: right;
+    font-family: 'Chakra Petch';
+    transition: color 0.2s ease;
+    transition: background-color 0.2s ease;
+}
+.boton:hover {
+    color:white;
+    background-color: rgb(3, 102, 72);
 }
 .boton_registrar {
     display: block;
@@ -115,51 +168,7 @@ body {
     background-color: rgb(3, 102, 72);
     cursor:pointer;
 }
-.calendario {
-    display: block;
-    margin: auto;
-}
-.logo_usm {
-    float: left;
-    display: inline;
-    margin-top: 16px;
-    margin-left: 10%;
-    animation-name: fade;
-    animation-duration: 4s;
-}
 
-.img_estudiantes{
-    float: left;
-    border-radius: 50%;
-    animation-name: mover_fade;
-    animation-duration: 2s;
-    margin-left: 8%;
-    margin-right: 8%;
-    margin-bottom: 3%;
-}
-
-#form_up{
-    display: block;
-    margin: auto;
-    float: right;
-    color: white;
-    font-family: 'Chakra Petch';
-    font-size: 18px;
-    animation-name: mover_fade2;
-    animation-duration: 2s;
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
-    border-radius: 50px;
-    background-color: #002534;
-    overflow: hidden;
-    padding: 0px 25px 0px 25px;
-    margin-right: 10%;
-    width: 300px;
-    height: 380px;
-    box-shadow: 2px 2px 3px #343c42;
-    opacity: 0.9;
-}
 .right {
     float: right;
 }
@@ -167,26 +176,7 @@ body {
     text-align: center;
     font-size: 25px;
 }
-.registrar {
-    display: block;
-    margin: auto;
-    width: 130px;
-    height: 30px;
-    margin: 0 auto;
-    
-}
-.registrar:hover {
-    cursor: pointer;
-}
-.boton {
-    font-family: 'Chakra Petch';
-    transition: color 0.2s ease;
-    transition: background-color 0.2s ease;
-}
-.boton:hover {
-    color:white;
-    background-color: rgb(3, 102, 72);
-}
+
 .pregunta {
     display: block;
     margin: 10px auto;

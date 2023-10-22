@@ -35,37 +35,32 @@ background-attachment: fixed
         />
         
         <form action="registrado/" method="post">{% csrf_token %}
+            
             <div id="form_up">
                 <p class="center">Registrate ¡Es gratis!</p>
                 <label for="nombre">Nombre:</label>
-                <input required type="text" placeholder="Primer nombre" maxlength="25" name="nombre" id="nombre" class="right boton">
-                <br>
-                <br>
+                <input required type="text" placeholder="Primer nombre" maxlength="25" name="nombre" id="nombre" class="right boton"><br><br>
+
                 <label for="apellido">Apellido:</label>
-                <input required type="text" placeholder="Apellido paterno " maxlength="25" name="apellido" id="apellido" class="right boton">
-                <br>
-                <br>
+                <input required type="text" placeholder="Apellido paterno " maxlength="25" name="apellido" id="apellido" class="right boton"><br><br>
+
                 <label for="contraseña">Contraseña:</label>
-                <input required type="password" placeholder="Min: 8 caracteres" minlength="8" maxlength="15" name="contraseña" id="contraseña" class="right boton">
-                <br>
-                <br>
+                <input required type="password" placeholder="Min: 8 caracteres" minlength="8" maxlength="15" name="contraseña" id="contraseña" class="right boton"><br><br>
+
                 <label for="correo">Correo:</label>
-                <input required type="email" placeholder="nombre@usm.cl" maxlength="100" name="correo" id="correo" class="right boton">
-                <br>
-                <br>
+                <input required type="email" placeholder="nombre@usm.cl" maxlength="100" name="correo" id="correo" class="right boton"><br><br>
+
                 <label for="rol">ROL:</label>
-                <input required type="tel" placeholder="Ej: 123456789-1" maxlength="11" name="rol" id="rol" class="right boton">
-                <br>
-                <br>
+                <input required type="tel" placeholder="Ej: 123456789-1" maxlength="11" name="rol" id="rol" class="right boton"><br><br>
+
                 <label for="sexo">Sexo:</label> 
                 <select required name="sexo" id="sexo" class="right boton">
                     <option value="Hombre">Hombre</option> 
                     <option value="Mujer">Mujer</option>
                     <option value="Otro">Otro</option>
-                </select>
-                <br>
-                <br>
+                </select><br><br>
             </div>
+
             <div id="form_down">
                 <p id="minititulo">Ingresa tus bloques libres:</p>
                 <p id="Lunes">LUNES<br>
@@ -209,4 +204,5 @@ background-attachment: fixed
     </p>
     
 </body>
+
 </html>
