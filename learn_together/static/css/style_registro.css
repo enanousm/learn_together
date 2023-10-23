@@ -27,7 +27,7 @@ body {
     margin-top: 0px;
     margin-right: 10%;
     animation-name: fade;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 #minititulo {
     display: block;
@@ -38,7 +38,7 @@ body {
     text-shadow: 5px 4px 3px #343c42;
     margin: 10px 0 0 0;
     animation-name: fade;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 .logo_usm {
     float: left;
@@ -46,14 +46,14 @@ body {
     margin-top: 16px;
     margin-left: 10%;
     animation-name: fade;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 
 .img_estudiantes{
     float: left;
     border-radius: 50%;
     animation-name: mover_fade;
-    animation-duration: 2s;
+    animation-duration: 1s;
     margin-left: 8%;
     margin-right: 8%;
     margin-bottom: 3%;
@@ -67,7 +67,7 @@ body {
     font-family: 'Chakra Petch';
     font-size: 18px;
     animation-name: mover_fade2;
-    animation-duration: 2s;
+    animation-duration: 1s;
     border-style: solid;
     border-color: black;
     border-width: 2px;
@@ -86,7 +86,7 @@ body {
     color: white;
     font-family: 'Chakra Petch';
     animation-name: mover_fade2;
-    animation-duration: 2s;
+    animation-duration: 1s;
     border-style: solid;
     border-color: black;
     border-width: 2px;
@@ -188,4 +188,12 @@ body {
 .pregunta:hover {
     cursor: pointer;
     color: aquamarine;
+}
+.pregunta:link {
+    cursor: pointer;
+    color: white;
+}
+.pregunta:visited {
+    cursor: pointer;
+    color: white;
 }

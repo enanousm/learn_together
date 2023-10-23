@@ -22,10 +22,10 @@ def organizar_horario(request):
         horarios += h
     return horarios
 
-def registro(request):
+def inicio(request):
     return render(request, 'registro.html')
 
-def registrado(request):
+def registrar(request):
     nombre = request.POST['nombre']
     apellido = request.POST['apellido']
     contraseña = request.POST['contraseña']
@@ -34,9 +34,9 @@ def registrado(request):
     sexo = request.POST['sexo']
     horarios = organizar_horario(request)
     cont.insert_row(nombre,apellido,sexo,correo,contraseña,rol,horarios)
-    return HttpResponse('Datos registrados')
+    return homepage(request)
+
 
 @login_required
-def registrar_horario(request):
-    mensaje= request.POST
-    return 0
+def homepage(request):
+    return render(request, 'homepage.html')

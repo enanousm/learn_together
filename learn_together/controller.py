@@ -1,5 +1,5 @@
 import sqlite3 as sql
-url = 'learn_together/database/database.db'
+url = 'db.sqlite3'
 
 #crear la tabla si esta no existe#
 c = sql.connect(url)

@@ -27,7 +27,7 @@ body {
     margin-top: 0px;
     margin-right: 10%;
     animation-name: fade;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 
 .logo_usm {
@@ -36,14 +36,14 @@ body {
     margin-top: 16px;
     margin-left: 10%;
     animation-name: fade;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 
 .libros{
     display: block;
     margin: auto;
     animation-name: fade;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 
 #formulario{
@@ -52,7 +52,7 @@ body {
     color: white;
     font-family: 'Chakra Petch';
     animation-name: mover_fade2;
-    animation-duration: 2s;
+    animation-duration: 1s;
     border-style: solid;
     border-color: black;
     border-width: 2px;
@@ -90,4 +90,24 @@ body {
 .boton:hover {
     color:white;
     background-color: rgb(3, 102, 72);
+}
+.pregunta {
+    display: block;
+    margin: 10px auto;
+    font-size: 12px;
+    transition: color 0.4s ease;
+    width: 140px;
+    text-align: center;
+}
+.pregunta:hover {
+    cursor: pointer;
+    color: aquamarine;
+}
+.pregunta:link {
+    cursor: pointer;
+    color: white;
+}
+.pregunta:visited {
+    cursor: pointer;
+    color: white;
 }

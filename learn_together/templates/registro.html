@@ -34,7 +34,7 @@ background-attachment: fixed
         class="img_estudiantes"
         />
         
-        <form action="registrado/" method="post">{% csrf_token %}
+        <form action="registro/" method="post">{% csrf_token %}
             
             <div id="form_up">
                 <p class="center">Registrate ¡Es gratis!</p>
@@ -196,7 +196,7 @@ background-attachment: fixed
                     title="calendario"
                     class="calendario"><br>
                     <input type="submit" value="Registrate" class="boton_registrar">
-                    <p class="pregunta">¿Ya tienes una cuenta?</p>
+                    <a class="pregunta" href="{% url "login" %}">¿Ya tienes una cuenta?</a>
                 </p>
             </div>
         </form>
