@@ -24,6 +24,13 @@ def insert_row(nombre, apellido, sexo, correo, contraseña, rol, horario):
     c = sql.connect(url)    
     cursor = c.cursor()
     cursor.execute(instruction)
+    for l in correo:
+        if l == '@':
+            s = correo.index(l)
+    instruction = f'''INSERT INTO auth_user (username,password) VALUES ('{correo[:s]}','{contraseña}')'''
+    c = sql.connect(url)    
+    cursor = c.cursor()
+    cursor.execute(instruction)
     c.commit()
     c.close()
 
@@ -60,6 +67,28 @@ def search_user(correo):
 #buscar y retornar SOLO EL HORARIO del usuario#
 def search_horario(correo):
     instruction = f'''SELECT horarios FROM userdata WHERE correo='{correo}' '''
+    c = sql.connect(url)    
+    cursor = c.cursor()
+    cursor.execute(instruction)
+    data = cursor.fetchall()
+    c.commit()
+    c.close()
+    return data[0][0]
+    #retorna un string
+
+def buscar_correo(correo):
+    instruction = f'''SELECT correo FROM userdata WHERE correo='{correo}' '''
+    c = sql.connect(url)    
+    cursor = c.cursor()
+    cursor.execute(instruction)
+    data = cursor.fetchall()
+    c.commit()
+    c.close()
+    return data[0][0]
+    #retorna un string
+
+def buscar_password(contraseña):
+    instruction = f'''SELECT contraseña FROM userdata WHERE contraseña='{contraseña}' '''
     c = sql.connect(url)    
     cursor = c.cursor()
     cursor.execute(instruction)

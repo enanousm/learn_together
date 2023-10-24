@@ -19,9 +19,11 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('accounts/', include('django.contrib.auth.urls'), name='login'),
     path('admin/', admin.site.urls),
-    path('', views.inicio, name="registro"),
-    path('registro/', views.registrar),
-    path('homepage/', views.homepage, name="homepage")
+    path('registrar/', views.registrar),
+    path('login/loguear/', views.loguear),
+    path('desloguear/', views.desloguear),
+    path('login/', views.pagina_login, name='login'),
+    path('', views.pagina_registro, name="registro"),
+    path('homepage/', views.pagina_homepage, name="homepage"),
 ]
