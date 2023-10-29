@@ -96,4 +96,4 @@ def buscar_password(contraseña):
     c.commit()
     c.close()
     return data[0][0]
-    #retorna un string
+    #retorna un stringg
