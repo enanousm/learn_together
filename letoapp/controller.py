@@ -1,5 +1,5 @@
 import sqlite3 as sql
-url = 'db.sqlite3'
+url = 'letoapp/database/database.sqlite3'
 
 #crear la tabla si esta no existe#
 c = sql.connect(url)
@@ -21,13 +21,6 @@ c.close()
 #insertar nuevo usuario en la base de datos#
 def insert_row(nombre, apellido, sexo, correo, contraseña, rol, horario):
     instruction = f'''INSERT INTO userdata VALUES('{nombre}','{apellido}','{sexo}','{correo}','{contraseña}','{rol}','{horario}')'''
-    c = sql.connect(url)    
-    cursor = c.cursor()
-    cursor.execute(instruction)
-    for l in correo:
-        if l == '@':
-            s = correo.index(l)
-    instruction = f'''INSERT INTO auth_user (username,password) VALUES ('{correo[:s]}','{contraseña}')'''
     c = sql.connect(url)    
     cursor = c.cursor()
     cursor.execute(instruction)
