@@ -20,5 +20,5 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(app.urls))
+    path('', include('letoapp.urls'))
 ]
