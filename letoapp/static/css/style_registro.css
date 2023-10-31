@@ -83,6 +83,7 @@ body {
 }
 #form_down {
     display: block;
+    margin: auto;
     color: white;
     font-family: 'Chakra Petch';
     animation-name: mover_fade2;
@@ -173,8 +174,8 @@ body {
     float: right;
 }
 .msg {
-    font-size: 4px;
-    color: rgb(173, 0, 0);
+    font-size: 22px;
+    color: rgb(255, 59, 59);
     text-align: center;
 }
 .center {

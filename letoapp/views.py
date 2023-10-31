@@ -73,10 +73,11 @@ def registrar(request):
         
         return redirect('login')
     except:
-        messages.error(request, 'El usuario y/o contraseña ya estan ocupados')
+        messages.error(request, 'El usuario ya esta ocupado')
         return redirect('registro')
 
-
-@login_required
 def pagina_homepage(request):
-    return render(request, 'homepage.html')
+    if request.user.is_authenticated:
+        return render(request, 'homepage.html')
+    else:
+        return redirect('login')
