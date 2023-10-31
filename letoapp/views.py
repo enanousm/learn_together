@@ -6,7 +6,7 @@ from .models import ramo, horario
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
-from .models import horario
+from .models import userdata
 
 def organizar_horario(request):
     horarios = ''
@@ -60,16 +60,18 @@ def registrar(request):
         correo = request.POST['correo']
         rol = request.POST['rol']
         nuevo_horario = organizar_horario(request)
-        user = User.objects.create_user(username=usuario,
-                                        first_name=nombre,
-                                        last_name=apellido,
-                                        password=contraseña,
-                                        email=correo
-                                        )
-        user.save()
-        horario(username=usuario,
+        User.objects.create_user(username=usuario,
+                                 first_name=nombre,
+                                 last_name=apellido,
+                                 password=contraseña,
+                                 email=correo).save()
+        userdata(username=usuario,
                 n_horario=nuevo_horario,
-                rol=rol).save()
+                rol=rol,
+                first_name=nombre,
+                last_name=apellido,
+                email=correo,
+                ).save()
         
         return redirect('login')
     except:
