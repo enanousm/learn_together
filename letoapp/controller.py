@@ -2,7 +2,7 @@ import sqlite3 as sql
 url = 'letoapp/database/database.sqlite3'
 
 def search_user(username):
-    instruction = f'''SELECT * FROM letoapp_horario WHERE username='{username}' '''
+    instruction = f'''SELECT * FROM letoapp_userdata WHERE username='{username}' '''
     c = sql.connect(url)    
     cursor = c.cursor()
     cursor.execute(instruction)
