@@ -40,6 +40,25 @@ body {
     animation-name: fade;
     animation-duration: 2s;
 }
+#info_usuario {
+    display: block;
+    margin:auto;
+    width: 40%;
+    color: white;
+    font-family: 'Chakra Petch';
+    font-size: 18px;
+    animation-name: mover_fade2;
+    animation-duration: 1s;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 20px;
+    background-color: #002534;
+    overflow: hidden;
+    box-shadow: 2px 2px 3px #343c42;
+    opacity: 0.9;
+    padding: 20px 25px;
+}
 .logo_usm {
     float: left;
     display: inline;
