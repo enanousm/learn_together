@@ -16,6 +16,7 @@
     <h1 id="titulo">        
         LEARN TOGETHER
     </h1>
+    
 </head>
 
 <body
@@ -37,7 +38,19 @@ background-attachment: fixed
         <form action="registrar/" method="post">{% csrf_token %}
             
             <div id="form_up">
-                <p class="center">Registrate ¡Es gratis!</p>
+                <p>
+                    {% if messages %}
+                        {% for msg in messages %}
+                            <p class="msg">{{msg}}</p>
+                        {% endfor %}
+                    {% else %}
+                        <p class="center">{{subtitulo}}</p>
+                    {% endif %}
+                </p>
+
+                <label for="username">Usuario:</label>
+                <input required type="text" placeholder="Ej: juan_together" maxlength="25" name="username" id="username" class="right boton"><br><br>
+
                 <label for="nombre">Nombre:</label>
                 <input required type="text" placeholder="Primer nombre" maxlength="25" name="nombre" id="nombre" class="right boton"><br><br>
 
@@ -53,12 +66,6 @@ background-attachment: fixed
                 <label for="rol">ROL:</label>
                 <input required type="tel" placeholder="Ej: 123456789-1" maxlength="11" name="rol" id="rol" class="right boton"><br><br>
 
-                <label for="sexo">Sexo:</label> 
-                <select required name="sexo" id="sexo" class="right boton">
-                    <option value="Hombre">Hombre</option> 
-                    <option value="Mujer">Mujer</option>
-                    <option value="Otro">Otro</option>
-                </select><br><br>
             </div>
 
             <div id="form_down">
