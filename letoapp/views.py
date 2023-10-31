@@ -78,6 +78,18 @@ def registrar(request):
 
 def pagina_homepage(request):
     if request.user.is_authenticated:
-        return render(request, 'homepage.html')
+        username = request.user.username
+        datos = (cont.search_user(username))[0]
+        horarios = datos[2]
+        rol = datos[3]
+        ramo = datos[4]
+        mhorarios = cont.recuperar_horario(horarios)
+        return render(request, 'homepage.html', {'horarios':mhorarios,'rol':rol,'ramo':ramo})
+    else:
+        return redirect('login')
+    
+def pagina_micuenta(request):
+    if request.user.is_authenticated:
+        return render(request, 'micuenta.html')
     else:
         return redirect('login')

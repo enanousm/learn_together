@@ -1,0 +1,119 @@
+@keyframes fade {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    } 
+}
+@keyframes mover_fade {
+    from {transform: translateY(-200px); opacity: 0; filter:blur(5px)}
+    to {opacity: 1;filter:blur(0px)}
+}
+@keyframes mover_fade2 {
+    from {transform: translateY(-200px); opacity: 0; filter:blur(5px)}
+    to {opacity: 0.9;filter:blur(0px)}
+}
+body {
+    background-color: #070c19;
+}
+#titulo{
+    color: #070c19;
+    font-size: 70px;
+    font-family: 'Chakra Petch';
+    text-shadow: 5px 4px 3px #343c42;
+    text-align: right;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    margin-right: 10%;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+#minititulo {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    font-size: 35px;
+    font-family: 'Chakra Petch';
+    text-shadow: 5px 4px 3px #343c42;
+    margin: 10px 0 0 0;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+.logo_usm {
+    float: left;
+    display: inline;
+    margin-top: 16px;
+    margin-left: 10%;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+.img_estudiantes{
+    float: left;
+    border-radius: 50%;
+    animation-name: mover_fade;
+    animation-duration: 1s;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 3%;
+}
+.boton {
+    float: right;
+    font-family: 'Chakra Petch';
+    transition: color 0.2s ease;
+    transition: background-color 0.2s ease;
+}
+.boton:hover {
+    color:white;
+    background-color: rgb(3, 102, 72);
+}
+.boton_registrar {
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 40px;
+    font-family: 'Chakra Petch';
+    font-size: 25px;
+    background-color: rgba(11, 84, 87, 0.2);
+    color: white;
+}
+.boton_registrar:hover {
+    color:white;
+    background-color: rgb(3, 102, 72);
+    cursor:pointer;
+}
+
+.right {
+    float: right;
+}
+.msg {
+    font-size: 22px;
+    color: rgb(255, 59, 59);
+    text-align: center;
+}
+.center {
+    text-align: center;
+    font-size: 25px;
+}
+
+.pregunta {
+    display: block;
+    margin: 10px auto;
+    font-size: 12px;
+    transition: color 0.4s ease;
+    width: 140px;
+    text-align: center;
+}
+.pregunta:hover {
+    cursor: pointer;
+    color: aquamarine;
+}
+.pregunta:link {
+    cursor: pointer;
+    color: white;
+}
+.pregunta:visited {
+    cursor: pointer;
+    color: white;
+}

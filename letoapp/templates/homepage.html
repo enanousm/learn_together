@@ -1,2 +1,38 @@
-<b1>Hola {{user.first_name}}, este es el HOMEPAGE</b1>
+<!DOCTYPE html>
+<html {% load static %}>
+<head>
+    <title>¡Registrate!</title>
+    <link rel="stylesheet" type='text/css' href="{% static "css/style_homepage.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,600&display=swap" rel="stylesheet">
+    <img 
+        class="logo_usm" 
+        src="{% static "images/logo_usm.png" %}" 
+        width="90px" 
+        height="90px"
+        title="Universidad Tecnica Federico Santa Maria"
+        >
+    <h1 id="titulo">        
+        PAGINA PRINCIPAL
+    </h1>
+    
+</head>
+<body
+style="
+background-image: url('{% static "images/form_background.jpg" %}'); 
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed
+">
+<div>
+    Hola {{user.first_name}} {{user.last_name}}<br>
+    ROL: {{rol}}<br>Horarios: {{horarios}}<br>
+    Ramo seleccionado: {{ramo}}<br>
+</div>
+<form>  </form>
+
+</body>
+
 <a href="desloguear/">Cerrar sesion</a>
+<a href="micuenta/">Mi cuenta</a>

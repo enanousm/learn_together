@@ -15,3 +15,4 @@ class horario(m.Model):
 
     def __str__(self):
         return self.username + '------->' + self.rol + '------->' + self.n_horario 
+
