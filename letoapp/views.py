@@ -21,10 +21,11 @@ def pagina_homepage(request):
         username = request.user.username
         datos = (functions.buscar_usuario(username))[0]
         rol = datos[3]
-        horarios = datos[4]
+        horario = datos[4]
         ramo = datos[5]
-        mhorarios = functions.recuperar_horario(horarios)
-        return render(request, 'homepage.html', {'horarios':mhorarios,'rol':rol,'ramo':ramo})
+        lista_match = functions.match(ramo,horario)
+        mhorarios = functions.recuperar_horario(horario)
+        return render(request, 'homepage.html', {'horarios':mhorarios,'rol':rol,'ramo':ramo, 'match':lista_match})
     
 def pagina_micuenta(request):
     if request.user.is_authenticated == False:
