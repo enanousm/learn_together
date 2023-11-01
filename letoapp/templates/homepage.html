@@ -19,18 +19,20 @@
     
 </head>
 <body
-style="
-background-image: url('{% static "images/homepage_background.jpg" %}'); 
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed
-">
-<div id="info_usuario">
-    <p id="subtitulo">¡Hola {{user.first_name}}! ¿Que deseas estudiar hoy?<br>Estos son tus datos:</p>
-    Rol: {{rol}}<br>Horarios: {{horarios}}<br>
-    Ramo seleccionado: {{ramo}}<br>
-</div>
-<form>  </form>
+    style="
+    background-image: url('{% static "images/homepage_background.jpg" %}'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed
+    ">
+    <div id="bloque_principal">
+        <div id="info_usuario">
+            <p id="subtitulo">¡Hola {{user.first_name}}! ¿Que deseas estudiar hoy?<br>Estos son tus datos:</p>
+            Rol: {{rol}}<br>Horarios: {{horarios}}<br>
+            Ramo seleccionado: {{ramo}}<br>
+        </div>
+    </div>
+    <form>  </form>
 
 </body>
 
