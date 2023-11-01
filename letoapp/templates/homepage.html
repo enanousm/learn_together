@@ -20,19 +20,22 @@
 </head>
 <body
 style="
-background-image: url('{% static "images/form_background.jpg" %}'); 
+background-image: url('{% static "images/homepage_background.jpg" %}'); 
 background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed
 ">
 <div id="info_usuario">
-    Hola {{user.first_name}} {{user.last_name}}<br>
-    ROL: {{rol}}<br>Horarios: {{horarios}}<br>
+    <p id="subtitulo">¡Hola {{user.first_name}}! ¿Que deseas estudiar hoy?<br>Estos son tus datos:</p>
+    Rol: {{rol}}<br>Horarios: {{horarios}}<br>
     Ramo seleccionado: {{ramo}}<br>
 </div>
 <form>  </form>
 
 </body>
 
-<a href="desloguear/">Cerrar sesion</a>
-<a href="micuenta/">Mi cuenta</a>
+<div id="footer">
+    <a class="pregunta" href="desloguear/">Cerrar sesion</a>
+    <a class="pregunta" href="micuenta/">Mi cuenta</a>
+</div>
+</html>

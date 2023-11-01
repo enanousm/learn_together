@@ -18,7 +18,7 @@ body {
     background-color: #070c19;
 }
 #titulo{
-    color: #070c19;
+    color: #a1fda1;
     font-size: 90px;
     font-family: 'Chakra Petch';
     text-shadow: 5px 4px 3px #343c42;
@@ -57,7 +57,7 @@ body {
     border-color: black;
     border-width: 2px;
     border-radius: 50px;
-    background-color: #002534;
+    background-color: #053b11;
     overflow: hidden;
     padding: 0px 25px 0px 25px;
     width: 300px;
