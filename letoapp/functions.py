@@ -1,7 +1,7 @@
 import sqlite3 as sql
 url = 'letoapp/database/database.sqlite3'
 
-def search_user(username):
+def buscar_usuario(username):
     instruction = f'''SELECT * FROM letoapp_userdata WHERE username='{username}' '''
     c = sql.connect(url)    
     cursor = c.cursor()
@@ -10,6 +10,25 @@ def search_user(username):
     c.commit()
     c.close()
     return data
+
+def organizar_horario(request):
+    horarios = ''
+    hlu = request.POST.getlist(str('lu'))
+    for h in hlu:
+        horarios += h
+    hma = request.POST.getlist(str('ma'))
+    for h in hma:
+        horarios += h
+    hmi = request.POST.getlist(str('mi'))
+    for h in hmi:
+        horarios += h
+    hju = request.POST.getlist(str('ju'))
+    for h in hju:
+        horarios += h
+    hvi = request.POST.getlist(str('vi'))
+    for h in hvi:
+        horarios += h
+    return horarios
 
 def arreglar_horario(h):
     final = ''
@@ -44,7 +63,7 @@ def arreglar_horario(h):
         final += '15-16 '
     ##############
     return final
-    
+
 def recuperar_horario(horario):
     largo = len(horario)
     lista_horarios = []
