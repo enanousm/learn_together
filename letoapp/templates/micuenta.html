@@ -1,4 +1,34 @@
-<p>Hola {{user.first_name}} estos son tus datos personales <br> horario/s:  {{horarios}} <br>Tu rol:  {{rol}} <br> Ramo Seleccionado actual:  {{ramo}}</p>
+<!DOCTYPE html>
+<html {% load static %}>
+<head>
+    <title>Mi cuenta</title>
+    <link rel="stylesheet" type='text/css' href="{% static "css/style_micuenta.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,600&display=swap" rel="stylesheet">
+    <img 
+        class="logo_usm" 
+        src="{% static "images/logo_usm.png" %}" 
+        width="90px" 
+        height="90px"
+        title="Universidad Tecnica Federico Santa Maria"
+        >
+    <h1 id="titulo">        
+        DATOS PERSONALES
+    </h1>
+    
+</head>
+<body style="
+background-image: url('{% static "images/micuenta_background.jpg" %}'); 
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed
+">
 
+    <div id="bloque_principal">
+        <p id="subtitulo">Tus Datos</p><p> Usuario: {{user.username}} <br> Nombre: {{user.first_name}} {{user.last_name}}<br>Rol: {{rol}} <br><br> HORARIOS: <br> {{horarios}}</p>
+    </div>
+</body>
 
-<a href="/homepage">Volver al Inicio</a>
+<a href="/homepage">Volver al Inicio </a>
+</html>

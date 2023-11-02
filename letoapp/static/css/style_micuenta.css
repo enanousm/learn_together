@@ -1,0 +1,64 @@
+@keyframes fade {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    } 
+}
+@keyframes mover_fade {
+    from {transform: translateY(-200px); opacity: 0; filter:blur(5px)}
+    to {opacity: 1;filter:blur(0px)}
+}
+@keyframes mover_fade2 {
+    from {transform: translateY(-200px); opacity: 0; filter:blur(5px)}
+    to {opacity: 0.9;filter:blur(0px)}
+}
+@keyframes mover_fade3 {
+    from {transform: translatex(-200px); opacity: 0; filter:blur(5px)}
+    to {opacity: 0.9;filter:blur(0px)}
+}
+body {
+    background-color: #263761;
+    font-family: 'Chakra Petch';
+    color: white;
+
+}
+#titulo{
+    color: #fcff45;
+    font-size: 90px;
+    font-family: 'Chakra Petch';
+    text-shadow: 5px 4px 3px #343c42;
+    text-align: right;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    margin-right: 10%;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+#subtitulo {
+    color: #f7f308;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Chakra Petch';
+    text-shadow: 3px 2px 3px #014e3e;
+    padding: 0 0 0 0;
+    margin: 0 0 10px 0;
+}
+.logo_usm {
+    float: left;
+    display: inline;
+    margin-top: 16px;
+    margin-left: 10%;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+#bloque_principal{
+    background-color: rgba(167, 2, 131, 0.849);
+    width: 40%;
+    height: 320px;
+    padding: 5px 20px;
+    border-style: solid;
+    border-radius: 10px;
+    font-size: 18px;
+}
