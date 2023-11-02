@@ -33,6 +33,15 @@
         </div>
     </div>
     <form>  </form>
+    {% for usuario, datos in match.items %}
+            <div id="bloque_principal">
+                <div id="info_usuario">
+                    <p id="subtitulo">{{datos.0}} {{datos.1}}</p>
+                    Rol: {{datos.2}}<br>Horarios: {{datos.4}}<br>
+                    Ramo seleccionado: {{ramo}}<br>
+                </div>
+            </div>
+        {% endfor %}
 
 </body>
 

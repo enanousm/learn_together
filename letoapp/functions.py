@@ -11,16 +11,6 @@ def buscar_usuario(username):
     c.close()
     return data
 
-def buscar_por_ramo(ramo):
-    instruction = f'''SELECT * FROM letoapp_userdata WHERE estudiar='{ramo}' '''
-    c = sql.connect(url)    
-    cursor = c.cursor()
-    cursor.execute(instruction)
-    data = cursor.fetchall()
-    c.commit()
-    c.close()
-    return data
-
 def organizar_horario(request):
     horarios = ''
     hlu = request.POST.getlist(str('lu'))
@@ -98,6 +88,16 @@ def separar_horario(horario):
         i+=3
     return lista_horarios
 
+def filtrar_ramo(ramo):
+    instruction = f'''SELECT * FROM letoapp_userdata WHERE estudiar='{ramo}' '''
+    c = sql.connect(url)    
+    cursor = c.cursor()
+    cursor.execute(instruction)
+    data = cursor.fetchall()
+    c.commit()
+    c.close()
+    return data
+
 def filtrar_horario(lista_horario,datos):
     final = {}
     for horario in lista_horario:
@@ -109,10 +109,11 @@ def filtrar_horario(lista_horario,datos):
     return final
 
 def match(ramo,horario):
-    datos = buscar_por_ramo(ramo)
+    datos = filtrar_ramo(ramo)
     if len(datos) == 0:
         return 0
     n_horario = separar_horario(horario)
     match_final = filtrar_horario(n_horario,datos)
     return (match_final)
 
+print (buscar_usuario('enano_cello'))
