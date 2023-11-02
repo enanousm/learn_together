@@ -28,20 +28,31 @@
     <div id="bloque_principal">
         <div id="info_usuario">
             <p id="subtitulo">¡Hola {{user.first_name}}! ¿Que deseas estudiar hoy?<br>Estos son tus datos:</p>
-            Rol: {{rol}}<br>Horarios: {{horarios}}<br>
-            Ramo seleccionado: {{ramo}}<br>
+            Rol: {{rol}}<br>Ramo seleccionado: {{ramo}}<br><br>HORARIOS LIBRES:<br>{{horarios}}<br>
         </div>
     </div>
     <form>  </form>
-    {% for usuario, datos in match.items %}
-            <div id="bloque_principal">
-                <div id="info_usuario">
-                    <p id="subtitulo">{{datos.0}} {{datos.1}}</p>
-                    Rol: {{datos.2}}<br>Horarios: {{datos.4}}<br>
-                    Ramo seleccionado: {{ramo}}<br>
+    {% if match.items %}
+        <p id="subtitulo2">TUS MATCHS:</p>
+        <div id="gran_bloque">
+            {% for usuario, datos in match.items %}
+                <div id="bloque_match">
+                    <div id="info_usuario">
+                        <p id="subtitulo">{{datos.0}} {{datos.1}}</p>
+                        {{datos.2}}<br>
+                        Ramo: {{ramo}}<br>
+                        Contacto: {{datos.3}}<br><br>
+                        HORARIOS EN COMUN:<br>{%for horario in datos.4%}{{horario}}<br>{%endfor%}
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
+    {% else %}
+        <div id="gran_bloque_error">
+            <p id="subtitulo_error"><br>NO SE HAN ENCONTRADO<br>COINCIDENCIAS<br><br></p>
+        </div>
+    {% endif %}
+        
 
 </body>
 

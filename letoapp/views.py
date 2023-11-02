@@ -23,7 +23,7 @@ def pagina_homepage(request):
         rol = datos[3]
         horario = datos[4]
         ramo = datos[5]
-        lista_match = functions.match(ramo,horario)
+        lista_match = functions.match(ramo,horario,username)
         mhorarios = functions.recuperar_horario(horario)
         return render(request, 'homepage.html', {'horarios':mhorarios,'rol':rol,'ramo':ramo, 'match':lista_match})
     

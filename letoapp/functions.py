@@ -98,22 +98,20 @@ def filtrar_ramo(ramo):
     c.close()
     return data
 
-def filtrar_horario(lista_horario,datos):
+def filtrar_horario(lista_horario,datos,usuario):
     final = {}
     for horario in lista_horario:
-        for _,first_name,last_name,rol,n_horario,_,email,username in datos:
-            if horario in n_horario:
+        for username,first_name,last_name,rol,n_horario,_,email,username in datos:
+            if horario in n_horario and usuario != username:
                 if username not in final:
-                    final[username] = [first_name,last_name,rol,email,'']
-                final[username][-1] += horario
+                    final[username] = [first_name,last_name,rol,email,[]]
+                final[username][-1].append(arreglar_horario(horario))
     return final
 
-def match(ramo,horario):
+def match(ramo,horario,usuario):
     datos = filtrar_ramo(ramo)
     if len(datos) == 0:
         return 0
     n_horario = separar_horario(horario)
-    match_final = filtrar_horario(n_horario,datos)
+    match_final = filtrar_horario(n_horario,datos,usuario)
     return (match_final)
-
-print (buscar_usuario('enano_cello'))
