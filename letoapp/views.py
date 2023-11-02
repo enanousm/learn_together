@@ -31,7 +31,14 @@ def pagina_micuenta(request):
     if request.user.is_authenticated == False:
         return redirect('login')
     else:
-        return render(request, 'micuenta.html')
+        username = request.user.username
+        datos = (functions.buscar_usuario(username))[0]
+        rol = datos[3]
+        horario = datos[4]
+        ramo = datos[5]
+        mhorarios = functions.recuperar_horario(horario)
+        return render(request, 'micuenta.html',{'horarios':mhorarios,'rol':rol,'ramo':ramo})
+
 
 ############################################
 
