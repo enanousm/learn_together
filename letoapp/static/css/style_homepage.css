@@ -114,6 +114,7 @@ body {
     opacity: 1;
     box-shadow: 4px 4px 3px rgb(42, 0, 48);
     background-color: #450894;
+    cursor: pointer;
 }
 #info_usuario {
     color: white;
