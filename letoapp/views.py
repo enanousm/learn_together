@@ -1,11 +1,10 @@
-from . import functions
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
-from .models import userdata, ramo
+from .models import userdata
+from . import functions
 
 ###### RENDER PAGINAS ######
 def pagina_registro(request):
