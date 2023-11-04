@@ -70,10 +70,10 @@ def registrar(request):
         rol = request.POST['rol']
         nuevo_horario = functions.organizar_horario(request)
         User.objects.create_user(username=usuario,
-                                 first_name=nombre,
-                                 last_name=apellido,
-                                 password=contraseña,
-                                 email=correo).save()
+                                first_name=nombre,
+                                last_name=apellido,
+                                password=contraseña,
+                                email=correo).save()
         userdata(username=usuario,
                 n_horario=nuevo_horario,
                 rol=rol,
