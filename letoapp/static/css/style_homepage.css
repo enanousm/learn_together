@@ -65,7 +65,7 @@ body {
 #bloque_principal {
     display: block;
     margin:auto;
-    width: 40%;
+    width: 600px;
     animation-name: mover_fade2;
     animation-duration: 1s;
     border-style: solid;
@@ -77,6 +77,48 @@ body {
     box-shadow: 2px 2px 3px #021422;
     opacity: 0.9;
     padding: 20px 25px;
+}
+#info_usuario_izq {
+    display: block;
+    float: left;
+    color: white;
+    font-family: 'Chakra Petch';
+    font-size: 18px;
+    width: 260px;
+    margin: 5px 10px;
+    overflow: hidden;
+}
+#info_usuario_der {
+    background-color: #408b7e63;
+    display: block;
+    text-align: center;
+    float: right;
+    color: white;
+    border-style: solid;
+    border-color: #014e3e;
+    border-width: 1px;
+    font-family: 'Chakra Petch';
+    font-size: 18px;
+    width: 230px;;
+    margin: 5px 10px;
+    padding: 15px 10px;
+    border-radius: 5px;
+}
+.barra_ramo {
+    text-align: center;
+    font-family: "Chakra Petch";
+    background-color: #654321;
+    color: white;
+}
+.buscar {
+    font-family: 'Chakra Petch';
+    background-color: rgba(11, 84, 87, 0.2);
+    color: white;
+}
+.buscar:hover {
+    color:white;
+    background-color: rgb(3, 102, 72);
+    cursor:pointer;
 }
 #gran_bloque {
     width: 780px;
@@ -93,6 +135,8 @@ body {
     border-radius: 10px;
 }
 #bloque_match {
+    font-family: "Chakra Petch";
+    color: white;
     text-align: center;
     display: inline-block;
     margin:10px 30px;
@@ -116,11 +160,7 @@ body {
     background-color: #450894;
     cursor: pointer;
 }
-#info_usuario {
-    color: white;
-    font-family: 'Chakra Petch';
-    font-size: 18px;
-}
+
 #footer {
     display: block;
     margin: auto;

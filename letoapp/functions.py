@@ -11,6 +11,28 @@ def buscar_usuario(username):
     c.close()
     return data
 
+def ramo(ramo):
+    instruction = f'''SELECT * FROM letoapp_ramo WHERE _ramo like '{ramo}' '''
+    c = sql.connect(url)    
+    cursor = c.cursor()
+    cursor.execute(instruction)
+    ramo = cursor.fetchall()
+    c.commit()
+    c.close()
+    if ramo:
+        return ramo[0][1]
+    else:
+        return 'none123'
+
+def insertar_ramo(username,ramo):
+    instruction = f'''UPDATE letoapp_userdata SET estudiar='{ramo}' WHERE username='{username}' '''
+    c = sql.connect(url)    
+    cursor = c.cursor()
+    cursor.execute(instruction)
+    c.commit()
+    c.close()
+
+
 def organizar_horario(request):
     horarios = ''
     hlu = request.POST.getlist(str('lu'))
@@ -71,12 +93,9 @@ def recuperar_horario(horario):
     i = 0
     while i < largo:
         dato = horario[i:i+3]
-        lista_horarios.append(dato)
+        lista_horarios.append(arreglar_horario(dato))
         i+=3
-    for h in lista_horarios:
-        h = arreglar_horario(h)
-        final += h
-    return final
+    return lista_horarios
 
 def separar_horario(horario):
     largo = len(horario)

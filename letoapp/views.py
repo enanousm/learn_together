@@ -8,13 +8,17 @@ from . import functions
 
 ###### RENDER PAGINAS ######
 def pagina_registro(request):
+    if request.user.is_authenticated:
+        return redirect('homepage')
     return render(request, 'registro.html', {'subtitulo':'Registrate ¡Es gratis!'})
 
 def pagina_login(request):
+    if request.user.is_authenticated:
+        return redirect('homepage')
     return render(request, 'login.html')
 
 def pagina_homepage(request):
-    if request.user.is_authenticated == False:
+    if not request.user.is_authenticated:
         return redirect('login')
     else:
         username = request.user.username
@@ -22,12 +26,16 @@ def pagina_homepage(request):
         rol = datos[3]
         horario = datos[4]
         ramo = datos[5]
+        if ramo == 'none123':
+            ramo = None
+        elif ramo == 'new_123':
+            ramo = 0
         lista_match = functions.match(ramo,horario,username)
         mhorarios = functions.recuperar_horario(horario)
         return render(request, 'homepage.html', {'horarios':mhorarios,'rol':rol,'ramo':ramo, 'match':lista_match})
     
 def pagina_micuenta(request):
-    if request.user.is_authenticated == False:
+    if not request.user.is_authenticated:
         return redirect('login')
     else:
         username = request.user.username
@@ -41,7 +49,7 @@ def pagina_micuenta(request):
 
 ############################################
 
-###### FUNCIONES LOGIN Y LOGOUT ######
+###### FUNCIONES LOGIN, LOGOUT Y RAMO ######
 def loguear(request):
     try:
         username = request.POST["username"]
@@ -85,3 +93,10 @@ def registrar(request):
     except:
         messages.error(request, 'El usuario ya esta ocupado')
         return redirect('registro')
+
+def ramo(request):
+    username = request.user.username
+    ramo = request.POST["selecc_ramo"]
+    ramo = functions.ramo(ramo)
+    functions.insertar_ramo(username,ramo)
+    return redirect ('homepage')

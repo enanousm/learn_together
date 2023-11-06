@@ -26,12 +26,31 @@
     background-attachment: fixed
     ">
     <div id="bloque_principal">
-        <div id="info_usuario">
-            <p id="subtitulo">¡Hola {{user.first_name}}! ¿Que deseas estudiar hoy?<br>Estos son tus datos:</p>
-            Rol: {{rol}}<br>Ramo seleccionado: {{ramo}}<br><br>HORARIOS LIBRES:<br>{{horarios}}<br>
+        <p id="subtitulo">¡Hola {{user.first_name}}! ¿Que deseas estudiar hoy?<br>Estos son tus datos:</p>
+        <div id="info_usuario_izq">
+            HORARIOS LIBRES:<br>
+            {% for horario in horarios %}
+                <li>{{horario}}<br></li>
+            {% endfor %}
+        </div>
+        <div id="info_usuario_der">
+            {% if ramo %}
+                RAMO SELECCIONADO:<br>
+            {{ramo}}
+            {% elif ramo == 0 %}
+                RAMO SELECCIONADO:<br>
+                ¡Busca un ramo!
+            {% else %}
+                RAMO SELECCIONADO:<br>
+                No hay coincidencias
+            {% endif %}
+            <form action="ramo/" method="post"> {% csrf_token %}
+                <input required type="text" placeholder="¿Que quieres estudiar?" maxlength="7" minlength="7" name="selecc_ramo" id="selecc_ramo" class="barra_ramo">
+                <input type="submit" value="Buscar" class="buscar">
+            </form>
+            
         </div>
     </div>
-    <form>  </form>
     {% if match.items %}
         <p id="subtitulo2">TUS MATCHS:</p>
         <div id="gran_bloque">
