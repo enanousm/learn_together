@@ -52,16 +52,6 @@ body {
     animation-name: mover_fade;
     animation-duration: 1s;
 }
-#subtitulo_error {
-    color: #e60000;
-    text-align: center;
-    font-size: 40px;
-    font-family: 'Chakra Petch';
-    text-shadow: 3px 2px 3px #001d17;
-    margin: 5px;
-    animation-name: mover_fade;
-    animation-duration: 1s;
-}
 #bloque_principal {
     display: block;
     margin:auto;
@@ -193,7 +183,6 @@ body {
     animation-name: fade;
     animation-duration: 2s;
 }
-
 .boton_match {
     display: block;
     margin: auto;

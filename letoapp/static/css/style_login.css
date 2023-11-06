@@ -39,13 +39,6 @@ body {
     animation-duration: 2s;
 }
 
-.libros{
-    display: block;
-    margin: auto;
-    animation-name: fade;
-    animation-duration: 2s;
-}
-
 #formulario{
     display: block;
     margin: auto;
@@ -78,14 +71,14 @@ body {
     color: rgb(255, 80, 80);
     margin: 0;
 }
-.registrar {
+.login {
     display: block;
     width: 130px;
     height: 30px;
     margin: 15px auto;
     
 }
-.registrar:hover {
+.login:hover {
     cursor: pointer;
 }
 .boton {

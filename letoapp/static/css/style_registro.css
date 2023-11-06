@@ -180,11 +180,6 @@ body {
 .right {
     float: right;
 }
-.msg {
-    font-size: 22px;
-    color: rgb(255, 59, 59);
-    text-align: center;
-}
 .subtitulo {
     text-align: center;
     font-size: 25px;

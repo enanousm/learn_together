@@ -103,16 +103,6 @@ body {
     float: right;
     width: 20%;
 }
-.boton {
-    float: right;
-    font-family: 'Chakra Petch';
-    transition: color 0.2s ease;
-    transition: background-color 0.2s ease;
-}
-.boton:hover {
-    color:white;
-    background-color: rgb(3, 102, 72);
-}
 .boton_registrar {
     display: block;
     margin: auto;
@@ -132,17 +122,6 @@ body {
 .right {
     float: right;
 }
-.msg {
-    font-size: 22px;
-    color: rgb(255, 59, 59);
-    text-align: center;
-}
-.subtitulo {
-    text-align: center;
-    font-size: 25px;
-    margin: 15px 0 30px 0;
-}
-
 .pregunta {
     display: block;
     margin: 10px auto;

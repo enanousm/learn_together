@@ -3,11 +3,11 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
-from .models import userdata
 from django.conf import settings
 from django.core.mail import send_mail
-
+from.models import userdata
 from . import functions
+
 
 ###### RENDER PAGINAS ######
 def pagina_registro(request):
@@ -57,7 +57,7 @@ def pagina_horario(request):
 
 ############################################
 
-###### FUNCIONES LOGIN, LOGOUT Y RAMO ######
+################ FUNCIONES #################
 def loguear(request):
     try:
         username = request.POST["username"]
@@ -114,7 +114,7 @@ def ramo(request):
 def email(request,correo):
     send_mail(
     '¡Nuevo MATCH en Learn together!',
-    f'{request.user.first_name} {request.user.last_name} ha coincidido contigo.\n¡Contactense!\n{request.user.email}',
+    f'{request.user.first_name} {request.user.last_name} ha coincidido contigo.\n¡Contactense!\nCorreo: {request.user.email}',
     settings.EMAIL_HOST_USER,
     [correo],
     fail_silently=False
