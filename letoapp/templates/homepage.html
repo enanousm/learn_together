@@ -30,8 +30,8 @@
         <div id="info_usuario_izq">
             HORARIOS LIBRES:<br>
             {% for horario in horarios %}
-                <li>{{horario}}<br></li>
-            {% endfor %}
+                    <li>{{horario}}<br></li>
+                {% endfor %}
         </div>
         <div id="info_usuario_der">
             {% if ramo %}
@@ -48,7 +48,15 @@
                 <input required type="text" placeholder="¿Que quieres estudiar?" maxlength="7" minlength="7" name="selecc_ramo" id="selecc_ramo" class="barra_ramo">
                 <input type="submit" value="Buscar" class="buscar">
             </form>
-            
+        </div>
+        <div id="mensajes">
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
     </div>
     {% if match.items %}
@@ -60,11 +68,13 @@
                         <p id="subtitulo">{{datos.0}} {{datos.1}}</p>
                         {{datos.2}}<br>
                         Ramo: {{ramo}}<br>
-                        Contacto: {{datos.3}}<br><br>
+                        {{datos.3}}<br><br>
                         HORARIOS EN COMUN:<br>{%for horario in datos.4%}{{horario}}<br>{%endfor%}
+                        <a id="enviar_correo" href="{% url 'email' datos.3 %}" >¡Envia un correo!</a>
                     </div>
                 </div>
             {% endfor %}
+            
         </div>
     {% else %}
         <div id="gran_bloque_error">

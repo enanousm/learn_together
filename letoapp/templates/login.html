@@ -27,17 +27,22 @@ background-attachment: fixed
 "
     <p>
         <div id="formulario">
-            <p class="center">Inicia sesion:</p>
+            <p class="subtitulo">Inicia sesion:</p>
             <form action="loguear/" method="post">{% csrf_token %}
                 <label for="username">Usuario:</label>
-                <input required type="text" placeholder="juan_together" maxlength="100" name="username" id="username" class="right boton">
-                <br>
-                <br>
+                <input required type="text" placeholder="juan_together" maxlength="100" name="username" id="username" class="right boton"><br><br>
+                
                 <label for="contraseña">Contraseña:</label>
                 <input required type="password" placeholder="Min: 8 caracteres" minlength="8" maxlength="15" name="contraseña" id="contraseña" class="right boton">
-                <br>
-                <br>
-                <br>
+                
+                {% if messages %}
+                    <div class="error">
+                        {% for message in messages %}
+                            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
                 <input type="submit" value="Enviar" class="boton registrar">
                 <a class="pregunta" href="{% url 'registro' %}">¿No tienes cuenta? ¡Registrate!</a>
             </form>

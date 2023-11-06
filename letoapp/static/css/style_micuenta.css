@@ -15,7 +15,7 @@
     to {opacity: 0.9;filter:blur(0px)}
 }
 @keyframes mover_fade3 {
-    from {transform: translatex(-200px); opacity: 0; filter:blur(5px)}
+    from {transform: translatex(200px); opacity: 0; filter:blur(5px)}
     to {opacity: 0.9;filter:blur(0px)}
 }
 body {
@@ -33,8 +33,6 @@ body {
     margin-bottom: 15px;
     margin-top: 0px;
     margin-right: 10%;
-    animation-name: fade;
-    animation-duration: 2s;
 }
 #subtitulo {
     color: #f7f308;
@@ -50,15 +48,50 @@ body {
     display: inline;
     margin-top: 16px;
     margin-left: 10%;
-    animation-name: fade;
-    animation-duration: 2s;
 }
 #bloque_principal{
-    background-color: rgba(167, 2, 131, 0.849);
-    width: 40%;
-    height: 320px;
-    padding: 5px 20px;
+    background-color: rgb(59, 0, 48);
+    width: 25%;
+    margin-left: 10%;
+    padding: 10px 20px 20px 20px;
     border-style: solid;
     border-radius: 10px;
     font-size: 18px;
+    animation-name: mover_fade3;
+    animation-duration: 1s; 
+}
+.bloque {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.068);
+    padding: 5px 5px;
+    border-radius: 10px;
+    margin: 10px 0;
+    transition: ease 0.2s;
+}
+.bloque:hover {
+    background-color: rgba(255, 255, 255, 0.199);
+}
+.pregunta {
+    color: white;
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+.pregunta:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: aquamarine;
+}
+.pregunta:link {
+    cursor: pointer;
+    color: white;
+}
+.pregunta:visited {
+    cursor: pointer;
+    color: white;
+}
+.right {
+    margin: 0 0;
+    float:right;
 }

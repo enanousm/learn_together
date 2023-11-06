@@ -4,13 +4,16 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 from .models import userdata
+from django.conf import settings
+from django.core.mail import send_mail
+
 from . import functions
 
 ###### RENDER PAGINAS ######
 def pagina_registro(request):
     if request.user.is_authenticated:
         return redirect('homepage')
-    return render(request, 'registro.html', {'subtitulo':'Registrate ¡Es gratis!'})
+    return render(request, 'registro.html')
 
 def pagina_login(request):
     if request.user.is_authenticated:
@@ -46,6 +49,11 @@ def pagina_micuenta(request):
         mhorarios = functions.recuperar_horario(horario)
         return render(request, 'micuenta.html',{'horarios':mhorarios,'rol':rol,'ramo':ramo})
 
+def pagina_horario(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    else:
+        return render(request, 'horarios.html')
 
 ############################################
 
@@ -59,6 +67,8 @@ def loguear(request):
             login(request,user)
             return redirect('homepage')
         else:
+            mensaje = f'Usuario y/o contraseña invalidos'
+            messages.warning(request, mensaje)
             return redirect('login')
     except:
         return redirect('login')
@@ -91,7 +101,7 @@ def registrar(request):
         
         return redirect('login')
     except:
-        messages.error(request, 'El usuario ya esta ocupado')
+        messages.error(request, 'El usuario no se encuentra disponible')
         return redirect('registro')
 
 def ramo(request):
@@ -100,3 +110,23 @@ def ramo(request):
     ramo = functions.ramo(ramo)
     functions.insertar_ramo(username,ramo)
     return redirect ('homepage')
+
+def email(request,correo):
+    send_mail(
+    '¡Nuevo MATCH en Learn together!',
+    f'{request.user.first_name} {request.user.last_name} ha coincidido contigo.\n¡Contactense!\n{request.user.email}',
+    settings.EMAIL_HOST_USER,
+    [correo],
+    fail_silently=False
+    )
+    mensaje = f'¡Correo enviado a {correo} satisfactoriamente!'
+    messages.success(request, mensaje)
+    return redirect ('homepage')
+
+def actualizar(request):
+    nuevo_horario = functions.organizar_horario(request)
+    username = request.user.username
+    functions.actualizar_horario(username,nuevo_horario)
+    mensaje = f'¡Horario actualizado correctamente!'
+    messages.success(request, mensaje)
+    return redirect('homepage')

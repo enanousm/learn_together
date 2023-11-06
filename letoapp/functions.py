@@ -32,6 +32,13 @@ def insertar_ramo(username,ramo):
     c.commit()
     c.close()
 
+def actualizar_horario(username,horarios):
+    instruction = f'''UPDATE letoapp_userdata SET n_horario='{horarios}' WHERE username='{username}' '''
+    c = sql.connect(url)    
+    cursor = c.cursor()
+    cursor.execute(instruction)
+    c.commit()
+    c.close()
 
 def organizar_horario(request):
     horarios = ''

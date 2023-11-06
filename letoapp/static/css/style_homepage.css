@@ -104,6 +104,16 @@ body {
     padding: 15px 10px;
     border-radius: 5px;
 }
+#mensajes {
+    display: inline-block;
+    margin: auto;
+    width: 580px;
+    border-radius: 5px;
+    background-color: #9dffef;
+    font-family: 'Chakra Petch';
+    font-size: 18px;
+    color: rgb(24, 146, 0);
+}
 .barra_ramo {
     text-align: center;
     font-family: "Chakra Petch";
@@ -158,7 +168,7 @@ body {
     opacity: 1;
     box-shadow: 4px 4px 3px rgb(42, 0, 48);
     background-color: #450894;
-    cursor: pointer;
+    cursor: crosshair;
 }
 
 #footer {
@@ -194,7 +204,7 @@ body {
     background-color: rgba(11, 84, 87, 0.2);
     color: white;
 }
-.boton_match: hover {
+.boton_match:hover {
     color:white;
     background-color: rgb(3, 102, 72);
     cursor:pointer;
@@ -204,10 +214,12 @@ body {
     transition: color 0.4s ease;
     font-family: 'Chakra Petch';
     width: 8%;
+    text-decoration: none;
 }
 .pregunta:hover {
     cursor: pointer;
     color: rgb(229, 255, 0);
+    text-decoration: underline;
 }
 .pregunta:link {
     cursor: pointer;
@@ -216,4 +228,23 @@ body {
 .pregunta:visited {
     cursor: pointer;
     color: white;
+}
+#enviar_correo {
+    display: block;
+    margin: 8px auto;
+    width: 200px;
+    font-family: "Chakra Petch";
+    color: rgb(129, 0, 141);
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: #fff56a;
+    border-radius: 5px;
+    padding: 5px 5px;
+    border-style: dotted;
+    border-width: 2px;
+}
+#enviar_correo:hover {
+    background-color: #fff350;
+    color: rgb(99, 0, 110);
 }

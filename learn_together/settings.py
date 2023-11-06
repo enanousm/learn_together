@@ -125,3 +125,12 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'letoapp/static/'),)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#EMAIL
+
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'learntogether.utfsm@gmail.com'
+EMAIL_HOST_PASSWORD = 'ozyy nyhm irqb dpkn'
+EMAIL_PORT = 587

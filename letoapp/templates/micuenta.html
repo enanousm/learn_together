@@ -27,15 +27,21 @@ background-attachment: fixed
 
     <div id="bloque_principal">
         <p id="subtitulo">Tus Datos</p>
-        <p>
-            Usuario: {{user.username}}<br> 
-            Nombre: {{user.first_name}} {{user.last_name}}<br>
-            Rol: {{rol}} <br><br> 
-            HORARIOS: <br> {{horarios}}
-        </p>
-        <a href="/cambiar_datos">Cambiar Datos </a>
+            <div class="bloque">
+                Nombre: <p class=right>{{user.first_name}} {{user.last_name}}</p><br>
+                Usuario: <p class=right>{{user.username}}</p><br>
+                Rol: <p class=right>{{rol}}</p><br>
+            </div>
+            <div class="bloque">
+                BLOQUES LIBRES:
+                {% for horario in horarios %}
+                    <li>{{horario}}<br></li>
+                {% endfor %}
+            </div>
+        <a class="pregunta" href="/actualizar_horario">Actualizar horarios </a>
+        <a class="pregunta" href="/homepage">Volver a la Pagina Principal </a>
     </div>
 </body>
 
-<a href="/homepage">Volver al Inicio </a>
+
 </html>

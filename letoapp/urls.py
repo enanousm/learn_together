@@ -10,4 +10,7 @@ urlpatterns = [
     path('homepage/', views.pagina_homepage, name="homepage"),
     path('homepage/micuenta/', views.pagina_micuenta, name='micuenta'),
     path('homepage/ramo/', views.ramo, name='ramo'),
+    path('homepage/<correo>', views.email, name='email'),
+    path('actualizar_horario/', views.pagina_horario, name='actualizar_horario'),
+    path('actualizar_horario/actualizar/', views.actualizar, name='actualizar')
 ]

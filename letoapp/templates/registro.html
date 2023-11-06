@@ -38,18 +38,19 @@ background-attachment: fixed
         <form action="registrar/" method="post">{% csrf_token %}
             
             <div id="form_up">
-                <p>
-                    {% if messages %}
-                        {% for msg in messages %}
-                            <p class="msg">{{msg}}</p>
-                        {% endfor %}
-                    {% else %}
-                        <p class="center">{{subtitulo}}</p>
-                    {% endif %}
-                </p>
-
+                <p class="subtitulo">Registrate ¡Es gratis!</p>
+                
                 <label for="username">Usuario:</label>
-                <input required type="text" placeholder="Ej: juan_together" maxlength="25" name="username" id="username" class="right boton"><br><br>
+                <input required type="text" placeholder="Ej: juan_together" maxlength="25" name="username" id="username" class="right boton">
+                {% if messages %}
+                    <div class="error">
+                        {% for message in messages %}
+                            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <br><br>
+                {% endif %}
 
                 <label for="nombre">Nombre:</label>
                 <input required type="text" placeholder="Primer nombre" maxlength="25" name="nombre" id="nombre" class="right boton"><br><br>
@@ -197,11 +198,11 @@ background-attachment: fixed
                 </p>
                 <p id="final">
                     <img
-                    src= "{% static "images/calendario.png" %}"
+                    src= "{% static "images/lt_logo_2.png" %}"
                     width="140"
                     height="140"
-                    title="calendario"
-                    class="calendario"><br>
+                    title="Learn Together"
+                    class="logo_lt"><br>
                     <input type="submit" value="Registrate" class="boton_registrar">
                     <a class="pregunta" href="{% url "login" %}">¿Ya tienes una cuenta?</a>
                 </p>
