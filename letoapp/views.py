@@ -112,16 +112,21 @@ def ramo(request):
     return redirect ('homepage')
 
 def email(request,correo):
-    send_mail(
-    '¡Nuevo MATCH en Learn together!',
-    f'{request.user.first_name} {request.user.last_name} ha coincidido contigo.\n¡Contactense!\nCorreo: {request.user.email}',
-    settings.EMAIL_HOST_USER,
-    [correo],
-    fail_silently=False
-    )
-    mensaje = f'¡Correo enviado a {correo} satisfactoriamente!'
-    messages.success(request, mensaje)
-    return redirect ('homepage')
+    try:
+        send_mail(
+        '¡Nuevo MATCH en Learn together!',
+        f'{request.user.first_name} {request.user.last_name} ha coincidido contigo.\n¡Contactense!\nCorreo: {request.user.email}',
+        settings.EMAIL_HOST_USER,
+        [correo],
+        fail_silently=False
+        )
+        mensaje = f'¡Correo enviado a {correo} satisfactoriamente!'
+        messages.success(request, mensaje)
+        return redirect ('homepage')
+    except:
+        mensaje = f'¡Ups! Algo ha salido mal\n¿Quiza no tienes Internet?'
+        messages.error(request, mensaje)
+        return redirect ('homepage')
 
 def actualizar(request):
     nuevo_horario = functions.organizar_horario(request)

@@ -17,6 +17,46 @@
 body {
     background-color: #070c19;
 }
+body:hover {
+    cursor: default;
+}
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-5deg);
+    }
+    20% {
+      transform: rotateZ(4deg);
+    }
+    25% {
+      transform: rotateZ(-4deg);
+    }
+    30% {
+      transform: rotateZ(2deg);
+    }
+    35% {
+      transform: rotateZ(-1deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+.mover:hover {
+    animation: wiggle 2s linear infinite;
+}
 #titulo{
     color: #070c19;
     font-size: 90px;
@@ -52,8 +92,7 @@ body {
 .img_estudiantes{
     float: left;
     border-radius: 50%;
-    animation-name: mover_fade;
-    animation-duration: 1s;
+    animation: mover_fade 1s;
     margin-left: 8%;
     margin-right: 8%;
     margin-bottom: 3%;
@@ -170,6 +209,7 @@ body {
     font-size: 25px;
     background-color: rgba(11, 84, 87, 0.2);
     color: white;
+    transition: ease 0.2s;
 }
 .boton_registrar:hover {
     color:white;
@@ -196,7 +236,7 @@ body {
     text-decoration: none;
 }
 .pregunta:hover {
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
     color: aquamarine;
 }
@@ -207,4 +247,15 @@ body {
 .pregunta:visited {
     cursor: pointer;
     color: white;
+}
+.lista {
+    background-color: rgba(255, 255, 255, 0);
+    transition: ease 0.2s;
+    margin: 2px auto;
+    border-radius: 10px;
+    padding-left: 5px;
+
+}
+.lista:hover {
+    background-color: rgba(255, 255, 255, 0.199);
 }

@@ -14,8 +14,37 @@
     from {transform: translateY(-200px); opacity: 0; filter:blur(5px)}
     to {opacity: 0.9;filter:blur(0px)}
 }
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-5deg);
+    }
+    20% {
+      transform: rotateZ(4deg);
+    }
+    25% {
+      transform: rotateZ(-4deg);
+    }
+    30% {
+      transform: rotateZ(2deg);
+    }
+    35% {
+      transform: rotateZ(-1deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+.mover:hover {
+    animation: wiggle 2s linear infinite;
+}
 body {
     background-color: #070c19;
+}
+body:hover {
+    cursor: default;
 }
 #titulo{
     color: #fcff45;
@@ -112,27 +141,35 @@ body {
     font-size: 25px;
     background-color: rgba(11, 84, 87, 0.2);
     color: white;
+    transition: ease 0.2s;
 }
 .boton_registrar:hover {
     color:white;
     background-color: rgb(140, 150, 52);
     cursor:pointer;
 }
-
-.right {
-    float: right;
+.lista {
+    background-color: rgba(255, 255, 255, 0);
+    transition: ease 0.2s;
+    margin: 2px 0;
+    border-radius: 10px;
+    padding: 0 5px;
+}
+.lista:hover {
+    background-color: rgba(255, 255, 255, 0.199);
+    cursor: default;
 }
 .pregunta {
     display: block;
     margin: 10px auto;
     font-size: 20px;
-    transition: color 0.4s ease;
+    transition: 0.2s ease;
     width: 140px;
     text-align: center;
     text-decoration: none;
 }
 .pregunta:hover {
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
     color: aquamarine;
 }
@@ -148,4 +185,7 @@ body {
     display: block;
     margin: auto;
     border-radius: 50%;
+}
+.boton {
+    float: right;
 }
