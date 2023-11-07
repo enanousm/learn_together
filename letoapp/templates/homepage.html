@@ -42,7 +42,7 @@
         <div id="info_usuario_der">
             {% if ramo %}
                 <p id="minititulo">RAMO SELECCIONADO:</p>
-                <p class="flotar">{{ramo}}</p>
+                <p class="rotar">{{ramo}}</p>
             {% elif ramo == 0 %}
                 <p id="minititulo">RAMO SELECCIONADO:</p>
                 ¡Busca un ramo!
@@ -52,17 +52,17 @@
             {% endif %}
             <form action="ramo/" method="post"> {% csrf_token %}
                 <input required type="text" placeholder="¿Que quieres estudiar?" maxlength="7" minlength="7" name="selecc_ramo" id="selecc_ramo" class="barra_ramo">
-                <input type="submit" value="Buscar" class="buscar">
+                <input type="submit" value="Buscar" class="buscar mover">
             </form>
         </div>
         <div id="mensajes">
             {% if messages %}
                 <div class="messages">
                     {% for message in messages %}
-                        {% if '¡Ups! in {{message}}' %}
+                        {% if '¡Ups!' in message %}
                             <p{% if message.tags %} class="{{ message.tags }} error"{% endif %}>{{ message }}</p>
                         {% else %}
-                            <p{% if message.tags %} class="{{ message.tags }} error"{% endif %}>{{ message }}</p>
+                            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
                         {% endif %}
                     {% endfor %}
                 </div>

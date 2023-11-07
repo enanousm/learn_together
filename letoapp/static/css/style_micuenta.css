@@ -41,9 +41,6 @@
       transform: rotateZ(0);
     }
   }
-.mover:hover {
-    animation: wiggle 2s linear infinite;
-}
 body {
     background-color: #263761;
     font-family: 'Chakra Petch';
@@ -135,4 +132,10 @@ body:hover {
 .right {
     margin: 0 0;
     float:right;
+}
+.mover {
+    transition: ease 0.2s;
+}
+.mover:hover {
+    transform: scale(1.06);
 }

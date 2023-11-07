@@ -6,16 +6,9 @@
         opacity: 1;
     } 
 }
-@keyframes float {
-	0% {
-		transform: translatey(0px);
-	}
-	50% {
-		transform: translatey(-15px);
-	}
-	100% {
-		transform: translatey(0px);
-	}
+@keyframes rotar{
+    from {transform: rotate(0) scaleX(2); opacity: 0;}
+    to {transform: rotate(720deg) scaleX(1); opacity: 1;}
 }
 @keyframes mover_fade {
     from {transform: translateY(-200px); opacity: 0; filter:blur(5px)}
@@ -96,7 +89,6 @@ body:hover {
     font-size: 18px;
     margin: 0 0;
     text-align: center;
-    padding-bottom: 8px;
 }
 .lista {
     background-color: rgba(255, 255, 255, 0);
@@ -109,12 +101,14 @@ body:hover {
     background-color: rgba(255, 255, 255, 0.199);
     cursor: default;
 }
-.flotar {
-    animation: float 6s ease-in-out infinite;
+.rotar {
+    animation-name: rotar;
+    animation-duration: 1.3s;
     margin: 0 0;
+    text-align: center;
 }
 .mover:hover {
-    animation: wiggle 2s linear infinite;
+    transform: scale(1.06);
 }
 #bloque_principal {
     display: block;
@@ -144,7 +138,7 @@ body:hover {
     font-family: 'Chakra Petch';
     font-size: 18px;
     width: 260px;
-    min-height: 205px;
+    min-height: 193px;
     margin: 5px 10px;
     padding: 15px 20px;
     overflow: hidden;
@@ -311,8 +305,10 @@ body:hover {
     padding: 5px 5px;
     border-style: dotted;
     border-width: 2px;
+    transition: ease 0.2s;
 }
 #enviar_correo:hover {
     background-color: #fff350;
     color: rgb(99, 0, 110);
+    transform: scale(1.1);
 }
