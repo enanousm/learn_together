@@ -1,25 +1,8 @@
 @keyframes fade {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1;
-    } 
+    from {opacity: 0} to {opacity: 1;} 
 }
 @keyframes rotar{
-    0% {
-        opacity: 0; transform: translateY(20px); opacity: 0;
-    }
-    50% {
-        transform: scaleX(0.0001) translateY(20px); opacity: 0;
-    }
-    100% {
-        transform: scaleX(1); opacity: 1;
-    }
-}
-@keyframes aparecer {
-    from {transform: scaleX(0.0001);}
-    to {transform: scaleX(1);}
+    0% {opacity: 0; transform: translateY(20px); opacity: 0;}50% {transform: scaleX(0.0001) translateY(20px); opacity: 0;}100% {transform: scaleX(1); opacity: 1;}
 }
 @keyframes mover_fade {
     from {transform: translateY(-200px); opacity: 0; filter:blur(5px)}
@@ -69,11 +52,8 @@ body:hover {
     font-family: 'Chakra Petch';
     text-shadow: 5px 4px 3px #343c42;
     text-align: right;
-    margin-bottom: 15px;
-    margin-top: 0px;
-    margin-right: 10%;
-    animation-name: fade;
-    animation-duration: 2s;
+    margin: 0 10% 15px;
+    animation: fade 2s;
 }
 #subtitulo {
     color: #6ccfb1;
@@ -91,14 +71,13 @@ body:hover {
     font-family: 'Chakra Petch';
     text-shadow: 3px 2px 3px #001d17;
     margin: 5px;
-    animation-name: mover_fade;
-    animation-duration: 1s;
+    animation: mover_fade 1s;
 }
 #minititulo {
     color: white;
     font-family: 'Chakra Petch';
     font-size: 18px;
-    margin: 0 0;
+    margin: 0 0 0 0;
     text-align: center;
 }
 .lista {
@@ -113,8 +92,7 @@ body:hover {
     cursor: default;
 }
 .rotar {
-    animation-name: rotar;
-    animation-duration: 1.5s;
+    animation: rotar 1.5s;
     margin: 0 0;
     text-align: center;
 }
@@ -123,12 +101,10 @@ body:hover {
 }
 #bloque_principal {
     display: block;
-    margin:auto;
+    margin: auto;
     width: 600px;
-    animation-name: mover_fade2;
-    animation-duration: 1s;
-    border-style: solid;
-    border-color: black;
+    animation: mover_fade2 1s;
+    border: solid black;
     border-width: 2px;
     border-radius: 20px;
     background-color: #654321;

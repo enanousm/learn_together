@@ -1,10 +1,5 @@
 @keyframes fade {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1;
-    } 
+    from {opacity: 0}to {opacity: 1;} 
 }
 @keyframes mover_fade {
     from {transform: translateY(-200px); opacity: 0; filter:blur(5px)}
@@ -37,9 +32,7 @@
       transform: rotateZ(0);
     }
   }
-.mover:hover {
-    animation: wiggle 2s linear infinite;
-}
+
 body {
     background-color: #070c19;
 }
@@ -188,4 +181,7 @@ body:hover {
 }
 .boton {
     float: right;
+}
+.mover:hover {
+    animation: wiggle 2s linear infinite;
 }

@@ -1,97 +1,95 @@
 <!DOCTYPE html>
 <html {% load static %}>
-<head>
-    <title>Pagina Principal</title>
-    <link rel="stylesheet" type='text/css' href="{% static "css/style_homepage.css" %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,600&display=swap" rel="stylesheet">
-    <div id="header">
-        <img 
-            class="logo_usm" 
-            src="{% static "images/logo_usm.png" %}" 
-            width="90px" 
-            height="90px"
-            title="Universidad Tecnica Federico Santa Maria"
-            >
-        <h1 id="titulo">        
-            PAGINA PRINCIPAL
-        </h1>
-    </div>
-    
-</head>
-<body
-    style="
-    background-image: url('{% static "images/homepage_background.jpg" %}'); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed
-    ">
-    <div id="bloque_principal">
-        <p id="subtitulo">¡Hola {{user.first_name}}!<br>¿Que deseas estudiar hoy?</p>
-        <div id="info_usuario_izq">
-            <p id="minititulo">HORARIOS LIBRES:</p>
-            {% for horario in horarios %}
-                    <li class=lista>{{horario}}<br></li>
-                {% endfor %}
+    <head>
+        <title>Pagina Principal</title>
+        <link rel="stylesheet" type='text/css' href="{% static "css/style_homepage.css" %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,600&display=swap" rel="stylesheet">
+        <div id="header">
+            <img 
+                class="logo_usm" 
+                src="{% static "images/logo_usm.png" %}" 
+                width="90px" 
+                height="90px"
+                title="Universidad Tecnica Federico Santa Maria"
+                >
+            <h1 id="titulo">        
+                PAGINA PRINCIPAL
+            </h1>
         </div>
-        <div id="info_usuario_der_2">
-            <a class="pregunta lista mover" href="desloguear/">Cerrar sesion</a>
-            <a class="pregunta lista mover" href="micuenta/">Mi cuenta</a>
-        </div>
-        <div id="info_usuario_der">
-            {% if ramo %}
-                <p id="minititulo">RAMO SELECCIONADO:</p>
-                <p class="rotar">{{ramo}}</p>
-            {% elif ramo == 0 %}
-                <p id="minititulo">RAMO SELECCIONADO:</p>
-                ¡Busca un ramo!
-            {% else %}
-                <p id="minititulo">RAMO SELECCIONADO:</p>
-                No hay coincidencias
-            {% endif %}
-            <form action="ramo/" method="post"> {% csrf_token %}
-                <input required type="text" placeholder="¿Que quieres estudiar?" maxlength="7" minlength="7" name="selecc_ramo" id="selecc_ramo" class="barra_ramo">
-                <input type="submit" value="Buscar" class="buscar mover">
-            </form>
-        </div>
-        <div id="mensajes">
-            {% if messages %}
-                <div class="messages">
-                    {% for message in messages %}
-                        {% if '¡Ups!' in message %}
-                            <p{% if message.tags %} class="{{ message.tags }} error"{% endif %}>{{ message }}</p>
-                        {% else %}
-                            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-    </div>
-    {% if match.items %}
-        <p id="subtitulo2">TUS MATCHS:</p>
-        <div id="gran_bloque">
-            {% for usuario, datos in match.items %}
-                <div id="bloque_match">
-                    <div id="info_usuario">
-                        <p id="subtitulo">{{datos.0}} {{datos.1}}</p>
-                        {{datos.2}}<br>
-                        Ramo: {{ramo}}<br>
-                        {{datos.3}}<br><br>
-                        HORARIOS EN COMUN:<br>{%for horario in datos.4%}{{horario}}<br>{%endfor%}
-                        <a id="enviar_correo" href="{% url 'email' datos.3 %}" >¡Envia un correo!</a>
-                    </div>
-                </div>
-            {% endfor %}
-            
-        </div>
-    {% else %}
-        <div id="gran_bloque_error">
-            <p id="subtitulo_error"><br>NO SE HAN ENCONTRADO<br>COINCIDENCIAS<br><br></p>
-        </div>
-    {% endif %}
         
-
-</body>
+    </head>
+    <body
+        style="
+        background-image: url('{% static "images/homepage_background.jpg" %}'); 
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed
+        ">
+        <div id="bloque_principal">
+            <p id="subtitulo">¡Hola {{user.first_name}}!<br>¿Que deseas estudiar hoy?</p>
+                <div id="info_usuario_izq">
+                    <p id="minititulo">HORARIOS LIBRES:</p>
+                        {% for horario in horarios %}
+                                <li class=lista>{{horario}}<br></li>
+                        {% endfor %}
+                </div>
+            <div id="info_usuario_der_2">
+                <a class="pregunta lista mover" href="desloguear/">Cerrar sesion</a>
+                <a class="pregunta lista mover" href="micuenta/">Mi cuenta</a>
+            </div>
+            <div id="info_usuario_der">
+                {% if ramo %}
+                    <p id="minititulo">RAMO SELECCIONADO:</p>
+                    <p class="rotar">{{ramo}}</p>
+                {% elif ramo == 0 %}
+                    <p id="minititulo">RAMO SELECCIONADO:</p>
+                    ¡Busca un ramo!
+                {% else %}
+                    <p id="minititulo">RAMO SELECCIONADO:</p>
+                    No hay coincidencias
+                {% endif %}
+                <form action="ramo/" method="post"> {% csrf_token %}
+                    <input required type="text" placeholder="¿Que quieres estudiar?" maxlength="7" minlength="7" name="selecc_ramo" id="selecc_ramo" class="barra_ramo">
+                    <input type="submit" value="Buscar" class="buscar mover">
+                </form>
+            </div>
+            <div id="mensajes">
+                {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                            {% if '¡Ups!' in message %}
+                                <p{% if message.tags %} class="{{ message.tags }} error"{% endif %}>{{ message }}</p>
+                            {% else %}
+                                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% if match.items %}
+            <p id="subtitulo2">TUS MATCHS:</p>
+            <div id="gran_bloque">
+                {% for usuario, datos in match.items %}
+                    <div id="bloque_match">
+                        <div id="info_usuario">
+                            <p id="subtitulo">{{datos.0}} {{datos.1}}</p>
+                            {{datos.2}}<br>
+                            Ramo: {{ramo}}<br>
+                            {{datos.3}}<br><br>
+                            HORARIOS EN COMUN:<br>{%for horario in datos.4%}{{horario}}<br>{%endfor%}
+                            <a id="enviar_correo" href="{% url 'email' datos.3 %}" >¡Envia un correo!</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                
+            </div>
+        {% else %}
+            <div id="gran_bloque_error">
+                <p id="subtitulo_error"><br>NO SE HAN ENCONTRADO<br>COINCIDENCIAS<br><br></p>
+            </div>
+        {% endif %}
+    </body>
 </html>

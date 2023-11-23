@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html {% load static %}>
-<head>
-    <title>Inicia sesion</title>
-    <link rel="stylesheet" type='text/css' href="{% static "css/style_login.css" %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,600&display=swap" rel="stylesheet">
-    <img 
-        class="logo_usm" 
-        src="{% static "images/logo_usm.png" %}" 
-        width="90px" 
-        height="90px"
-        title="Universidad Tecnica Federico Santa Maria"
-        >
-    <h1 id="titulo">        
-        LEARN TOGETHER
-    </h1>
-</head>
+    <head>
+        <title>Inicia sesion</title>
+        <link rel="stylesheet" type='text/css' href="{% static "css/style_login.css" %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,600&display=swap" rel="stylesheet">
+        <img 
+            class="logo_usm" 
+            src="{% static "images/logo_usm.png" %}" 
+            width="90px" 
+            height="90px"
+            title="Universidad Tecnica Federico Santa Maria"
+            >
+        <h1 id="titulo">        
+            LEARN TOGETHER
+        </h1>
+    </head>
 
-<body
-style="
-background-image: url('{% static "images/login_background.jpg" %}'); 
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed
-"
-    <p>
-        <div id="formulario">
-            <p class="subtitulo">Inicia sesion:</p>
-            <form action="loguear/" method="post">{% csrf_token %}
-                <label for="username">Usuario:</label>
-                <input required type="text" placeholder="juan_together" maxlength="100" name="username" id="username" class="right boton"><br><br>
-                
-                <label for="contraseña">Contraseña:</label>
-                <input required type="password" placeholder="Min: 8 caracteres" minlength="8" maxlength="15" name="contraseña" id="contraseña" class="right boton">
-                
-                {% if messages %}
-                    <div class="error">
-                        {% for message in messages %}
-                            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-                
-                <input type="submit" value="Enviar" class="boton login">
-                <a class="pregunta lista" href="{% url 'registro' %}">¿No tienes cuenta? ¡Registrate!</a>
-            </form>
-        </div>
-        <br>
-    </p>
-    
-</body>
+    <body
+    style="
+    background-image: url('{% static "images/login_background.jpg" %}'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed
+    "
+        <p>
+            <div id="formulario">
+                <p class="subtitulo">Inicia sesion:</p>
+                <form action="loguear/" method="post">{% csrf_token %}
+                    <label for="username">Usuario:</label>
+                    <input required type="text" placeholder="juan_together" maxlength="100" name="username" id="username" class="right boton"><br><br>
+                    
+                    <label for="contraseña">Contraseña:</label>
+                    <input required type="password" placeholder="Min: 8 caracteres" minlength="8" maxlength="15" name="contraseña" id="contraseña" class="right boton">
+                    
+                    {% if messages %}
+                        <div class="error">
+                            {% for message in messages %}
+                                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                    <input type="submit" value="Enviar" class="boton login">
+                    <a class="pregunta lista" href="{% url 'registro' %}">¿No tienes cuenta? ¡Registrate!</a>
+                </form>
+            </div>
+            <br>
+        </p>
+        
+    </body>
+
 </html>
